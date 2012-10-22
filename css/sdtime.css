@@ -1,0 +1,34 @@
+/* HOMEPAGE
+-----------------------------------------------*/
+
+.header {
+	position: relative;
+	width: 100%;
+	height: 49px;
+	background: url(../img/header-bg.png) repeat-x top left #f37511;
+}
+
+.sd-logo {
+	position: absolute;
+	top: 7px;
+	left: 10px;
+	font: bold 30px Arial, Helvetica, sans-serif;
+	color: #FFFFFF;
+}
+
+.subheader {
+	width: 100%;
+	height: 41px;
+	background: url(../img/subheader-bg.png) repeat-x top left #f8f8f8;
+}
+
+.wrapper {
+	width: 940px;
+	margin: 0 auto;
+	text-align: left;
+	clear: both;
+}
+
+.content {
+	padding-top: 40px;
+}
