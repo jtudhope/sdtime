@@ -32,3 +32,212 @@
 .content {
 	padding-top: 40px;
 }
+
+/* DAY VIEW
+-----------------------------------------------*/
+
+.dayview-top {
+	margin-left: 85px;
+	width: 770px;
+	clear: both;
+}
+
+.dayview-left {
+	float: left;
+}
+
+.dayview-right {
+	float: right;
+}
+
+.dayview-day {
+	font: bold 28px/34px Arial, Helvetica, sans-serif;
+}
+
+.dayview-date {
+	padding-left: 5px;
+	font: 28px/34px Arial, Helvetica, sans-serif;
+	color: #999;
+}
+
+.dayview-controls {
+	padding-right: 10px;
+	float: left;
+}
+.dayview-calendar {
+	padding-right: 10px;
+	float: left;
+}
+.dayview-toggle {
+	float: left;
+}
+
+.dayview-content {
+	padding-top: 15px;
+}
+
+.dayview-entrycol {
+	width: 85px;
+	float: left;
+}
+
+.dayview-tablecol {
+	width: 770px;
+	float: left;
+}
+
+ul.dayview-days {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	width: 770px;
+	height: 45px;
+}
+ul.dayview-days li {
+	margin: 0;
+	padding: 0;
+	display: block;
+	float: left;
+}
+ul.dayview-days li a span {
+	display: block;
+	font-weight: normal;
+	font-size: 12px;
+}
+ul.dayview-days li a {
+	display: block;
+	width: 62px;
+	height: 33px;
+	text-indent: 5px;
+	border: 1px solid #CCC;
+	border-right: none;
+	font: bold 13px Arial, Helvetica, sans-serif;
+	color: #888;
+	text-shadow: 0 1px 0 #FFF;
+	text-decoration: none;
+	padding: 6px 15px;
+	background: -webkit-linear-gradient(top, #fff, #eee);
+	background: -moz-linear-gradient(top, #fff, #eee);
+	background: -o-linear-gradient(top, #fff, #eee);
+	background: -ms-linear-gradient(top, #fff, #eee);
+	background: linear-gradient(top, #fff, #eee);
+	clear: both;
+}
+ul.dayview-days li a:hover {
+	background: -webkit-linear-gradient(top, #f8f8f8, #e8e8e8);
+	background: -moz-linear-gradient(top, #f8f8f8, #e8e8e8);
+	background: -o-linear-gradient(top, #f8f8f8, #e8e8e8);
+	background: -ms-linear-gradient(top, #f8f8f8, #e8e8e8);
+	background: linear-gradient(top, #f8f8f8, #e8e8e8);
+}
+ul.dayview-days li a:focus,
+ul.dayview-days li a:active {
+	background: #eaeaea;
+	-moz-box-shadow: inset 0 1px 4px rgba(0,0,0,0.1);
+	-webkit-box-shadow: inset 0 1px 4px rgba(0,0,0,0.1);
+	-o-box-shadow: inset 0 1px 4px rgba(0,0,0,0.1);
+	box-shadow: inset 0 1px 4px rgba(0,0,0,0.1);
+}
+ul.dayview-days li a.selected {
+	display: block;
+	width: 62px;
+	height: 33px;
+	text-indent: 5px;
+	border: 1px solid #CCC;
+	border-right: none;
+	font: bold 13px Arial, Helvetica, sans-serif;
+	color: #888;
+	text-shadow: 0 1px 0 #FFF;
+	text-decoration: none;
+	padding: 6px 15px;
+	background: #eaeaea;
+	-moz-box-shadow: inset 0 1px 4px rgba(0,0,0,0.1);
+	-webkit-box-shadow: inset 0 1px 4px rgba(0,0,0,0.1);
+	-o-box-shadow: inset 0 1px 4px rgba(0,0,0,0.1);
+	box-shadow: inset 0 1px 4px rgba(0,0,0,0.1);
+	clear: both;
+}
+ul.dayview-days li a.first {
+	display: block;
+	width: 62px;
+	height: 33px;
+	text-indent: 5px;
+	border: 1px solid #CCC;
+	border-right: none;
+	font: bold 13px Arial, Helvetica, sans-serif;
+	color: #888;
+	text-shadow: 0 1px 0 #FFF;
+	text-decoration: none;
+	padding: 6px 15px;
+	background: -webkit-linear-gradient(top, #fff, #eee);
+	background: -moz-linear-gradient(top, #fff, #eee);
+	background: -o-linear-gradient(top, #fff, #eee);
+	background: -ms-linear-gradient(top, #fff, #eee);
+	background: linear-gradient(top, #fff, #eee);
+	border-top-left-radius: 5px;
+	clear: both;
+}
+ul.dayview-days li a.first:hover {
+	background: -webkit-linear-gradient(top, #f8f8f8, #e8e8e8);
+	background: -moz-linear-gradient(top, #f8f8f8, #e8e8e8);
+	background: -o-linear-gradient(top, #f8f8f8, #e8e8e8);
+	background: -ms-linear-gradient(top, #f8f8f8, #e8e8e8);
+	background: linear-gradient(top, #f8f8f8, #e8e8e8);
+}
+ul.dayview-days li a.first:focus,
+ul.dayview-days li a.first:active {
+	background: #eaeaea;
+	-moz-box-shadow: inset 0 1px 4px rgba(0,0,0,0.1);
+	-webkit-box-shadow: inset 0 1px 4px rgba(0,0,0,0.1);
+	-o-box-shadow: inset 0 1px 4px rgba(0,0,0,0.1);
+	box-shadow: inset 0 1px 4px rgba(0,0,0,0.1);
+}
+ul.dayview-days li.total-time {
+	display: block;
+	width: 117px;
+	height: 45px;
+	background: -webkit-linear-gradient(top, #f8f8f8, #e8e8e8);
+	background: -moz-linear-gradient(top, #f8f8f8, #e8e8e8);
+	background: -o-linear-gradient(top, #f8f8f8, #e8e8e8);
+	background: -ms-linear-gradient(top, #f8f8f8, #e8e8e8);
+	background: linear-gradient(top, #f8f8f8, #e8e8e8);
+	border: 1px solid #CCC;
+	border-top-right-radius: 5px;
+	font: 14px/45px Arial, Helvetica, sans-serif;
+	color: #888;
+	text-align: center;
+}
+span.total-time {
+	font-weight: bold;
+}
+
+.dayview-summary {
+}
+
+.dayview-no-entries {
+	display: block;
+	width: 768px;
+	height: 345px;
+	background: #FAFAFA;
+	border: 1px solid #CCC;
+	border-top: none;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	line-height: 345px;
+	text-align: center;
+}
+
+.dayview-no-entries > div {
+	display: inline-block;
+	line-height: 35px;
+	vertical-align: middle;
+	color: #CCC;
+	text-align: center;
+	font-weight: 200;
+	font-size: 20px;
+}
+.dayview-no-entries > div span {
+	display: block;
+	font-weight: normal;
+	font-size: 16px;
+}
