@@ -1,5 +1,0 @@
-C:\Users\gferrie\Desktop\_github\sdtime\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\gferrie\Desktop\_github\sdtime\bin\sdtime-web.dll
-C:\Users\gferrie\Desktop\_github\sdtime\bin\sdtime-web.pdb
-C:\Users\gferrie\Desktop\_github\sdtime\obj\Debug\sdtime-web.dll
-C:\Users\gferrie\Desktop\_github\sdtime\obj\Debug\sdtime-web.pdb
