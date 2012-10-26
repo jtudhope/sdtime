@@ -1,0 +1,7 @@
+C:\Users\gferrie\Desktop\_github\sdtime\sdtime-web\bin\sdtime-web.dll
+C:\Users\gferrie\Desktop\_github\sdtime\sdtime-web\bin\sdtime-web.pdb
+C:\Users\gferrie\Desktop\_github\sdtime\sdtime-web\bin\EntityFramework.dll
+C:\Users\gferrie\Desktop\_github\sdtime\sdtime-web\bin\EntityFramework.xml
+C:\Users\gferrie\Desktop\_github\sdtime\sdtime-web\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\gferrie\Desktop\_github\sdtime\sdtime-web\obj\Debug\sdtime-web.dll
+C:\Users\gferrie\Desktop\_github\sdtime\sdtime-web\obj\Debug\sdtime-web.pdb
