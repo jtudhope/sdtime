@@ -4,21 +4,30 @@
 .header {
 	position: relative;
 	width: 100%;
-	height: 49px;
+	height: 72px;
 	background: url(../img/header-bg.png) repeat-x top left #f37511;
 }
 
-.sd-logo {
-	position: absolute;
-	top: 7px;
-	left: 10px;
-	font: bold 30px Arial, Helvetica, sans-serif;
-	color: #FFFFFF;
+.sd-logo 
+{
+    
+	font: bold 64px Verdana, Tahoma, sans-serif;
+
+	margin-left: 88px;
+	margin-top: -68px;
+	color: #f3f3f3;
+}
+
+.logoimg 
+{
+    margin-left: 4px;
+    margin-top: 4px;
+    width: 64px; height: 64px;
 }
 
 .subheader {
 	width: 100%;
-	height: 41px;
+	height: 56px;
 	background: url(../img/subheader-bg.png) repeat-x top left #f8f8f8;
 }
 

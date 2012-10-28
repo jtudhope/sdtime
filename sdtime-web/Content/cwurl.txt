@@ -1,0 +1,1 @@
+https://connectwise.somethingdigital.com/v4_6_release/apis/1.5/MemberApi.asmx?wsdl

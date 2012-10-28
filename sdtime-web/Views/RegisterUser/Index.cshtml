@@ -1,0 +1,87 @@
+﻿@model sdtime.Security.ClaimsInfo
+
+@{
+    ViewBag.Title = "Register User";
+}
+<script src="../../Scripts/jquery-1.8.2.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    var local = {
+        CheckCWIdentity: function () {
+            var namq = $("#ConnectwiseID");
+            var emq = $("#cwemail");
+            var name = namq.val();
+            var email = emq.val();
+
+            $.ajax({
+                type: "POST", url: "/Api/FindMember",
+                accepts: "application/json",
+                data: { Name: name, EmailAddress: email },
+                success: function (data) {
+                    //debugger;
+                    var res = data[0].Value;
+
+                    if (res == null) {
+                        alert('#FAIL');
+                        return;
+                    }
+                    //debugger;
+
+                    namq.val(res.MemberID);
+                    emq.val(res.EmailAddress);
+                },
+                error: function (a, b, c) {
+
+                }
+            });
+        }
+    };
+    
+</script>
+
+<h2 class="IntroTitle">Please register (one time only)... </h2>
+
+<div class="display-field errormessage">
+    @ViewBag.ErrorMessage
+</div>
+
+<fieldset>
+    <legend>Login Info</legend>
+
+    <div class="display-label">Provider Info</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IdentityProviderName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ProviderKey)
+    </div>
+    <div>&nbsp;</div>
+    @using(Html.BeginForm("Submit", "RegisterUser", FormMethod.Post)) {
+        
+
+
+    <div class="display-label">Display Name: </div>
+    <div class="display-field">
+        @Html.EditorFor(model => model.DisplayName)
+    </div>
+
+    <div class="display-label">Email Address: </div>
+    <div class="display-field">
+        @Html.EditorFor(model => model.EmailAddress)
+    </div>
+
+    <div class="display-label">Connectwise ID/Name: </div>
+    <div class="display-field">
+        @Html.EditorFor(model => model.ConnectwiseID)
+        <input type="text" name="cwemail" id="cwemail" />
+        <input type="button" value="Connect" onclick="javascript:local.CheckCWIdentity();" />
+    </div>
+
+
+
+    <div class="display-field">
+        <input type="submit" value="Register" />
+    </div>
+
+    }
+</fieldset>
+
