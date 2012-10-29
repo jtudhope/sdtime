@@ -2,15 +2,21 @@
     ViewBag.Title = "sdtime";
 }
 <script src="../../Scripts/borrowed/dateFormat.util.js" type="text/javascript"></script>
+<script src="../../Scripts/jquery-1.8.2.min.js" type="text/javascript"></script>
+<script src="../../Scripts/knockout-2.1.0.debug.js" type="text/javascript"></script>
         <script type="text/javascript">
+            var d = new Date();
+            var sd = { ui: { setSelectedWeekday: function (today) { $("." + today.format("ddd")).addClass("selected"); } } }
 
             $(document).ready(function () {
-                var DayViewModel = function (results) {
-                    this.currentWeek = ko.observable("Week 25");
-                    this.today = ko.observable(new Date().format("mm / dd"));
-                    this.weekday = ko.observable(new Date().format("dddd"));
+                var DayViewModel = function () {
+                    this.currentWeek = ko.observable("Week ?? (TODO)");
+                    this.today = ko.observable(d.format("mm / dd"));
+                    this.weekday = ko.observable(d.format("dddd"));
                 };
                 ko.applyBindings(new DayViewModel());
+
+                sd.ui.setSelectedWeekday(d);
             });
         </script>
 
@@ -49,25 +55,25 @@
                     <div class="dayview-tablecol">
                         <ul class="dayview-days">
                             <li>
-                                <a href="#" class="first">Mon <span>0.00</span></a>
+                                <a href="#" class="first Mon">Mon <span>0.00</span></a>
                             </li>
                             <li>
-                                <a href="#">Tue <span>0.00</span></a>
+                                <a href="#" class="Tue">Tue <span>0.00</span></a>
                             </li>
                             <li>
-                                <a href="#" class="selected">Wed <span>0.00</span></a>
+                                <a href="#"  class="Wed">Wed <span>0.00</span></a>
                             </li>
                             <li>
-                                <a href="#">Thu <span>0.00</span></a>
+                                <a href="#" class="Thu">Thu <span>0.00</span></a>
                             </li>
                             <li>
-                                <a href="#">Fri <span>0.00</span></a>
+                                <a href="#"  class="Fri">Fri <span>0.00</span></a>
                             </li>
                             <li>
-                                <a href="#" class="weekend">Sat <span>0.00</span></a>
+                                <a href="#" class="weekend Sat">Sat <span>0.00</span></a>
                             </li>
                             <li>
-                                <a href="#" class="weekend">Sun <span>0.00</span></a>
+                                <a href="#" class="weekend Sun">Sun <span>0.00</span></a>
                             </li>
                             <li class="total-time">
                                 Total: <span class="total-time">0.00</span>
