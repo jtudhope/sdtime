@@ -24,11 +24,16 @@ namespace sdtime.Controllers
                 var claims = id.Claims;
                 var data = claims.GetClaimsInfo();
 
+                
+
                 if (!mgr.UserExists(data.IdentityProviderName, data.ProviderKey))
                 {
                     return RedirectToAction("Index", "RegisterUser");
                 }
+
+                var user = mgr.GetUserByKey(data.IdentityProviderName, data.ProviderKey);
                 
+                ViewBag.Username = user.DisplayName;
             }
             return View();
         }
