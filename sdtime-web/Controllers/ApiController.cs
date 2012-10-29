@@ -9,14 +9,6 @@ namespace sdtime.Controllers
 {
     public class ApiController : Controller
     {
-        //
-        // GET: /Api/
-
-        public ActionResult Index()
-        {
-            return View();
-        }
-
         public JsonResult FindMember(FindMemberRequest req)
         {
             dynamic data = new ExpandoObject();
@@ -53,6 +45,11 @@ namespace sdtime.Controllers
                 data.HasError = true;
             }
             return Json(data);
+        }
+
+        public JsonResult GetTimeEntries(TimeEntryRequest req)
+        {
+            return Json(new { f = "rrr" });           
         }
     }
 }

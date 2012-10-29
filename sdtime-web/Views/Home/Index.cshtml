@@ -1,19 +1,31 @@
 ﻿@{
     ViewBag.Title = "sdtime";
 }
+<script src="../../Scripts/borrowed/dateFormat.util.js" type="text/javascript"></script>
+        <script type="text/javascript">
 
+            $(document).ready(function () {
+                var DayViewModel = function (results) {
+                    this.currentWeek = ko.observable("Week 25");
+                    this.today = ko.observable(new Date().format("mm / dd"));
+                    this.weekday = ko.observable(new Date().format("dddd"));
+                };
+                ko.applyBindings(new DayViewModel());
+            });
+        </script>
 
+        
         <div class="wrapper">
             <div class="content">
                 
                 <div class="dayview-top">
                     <div class="dayview-left">
-                        <span class="dayview-day">Wednesday</span> <span class="dayview-date">24 Oct</span>
+                        <span class="dayview-day" data-bind="text: weekday"></span> <span class="dayview-date" data-bind="text: today"></span>
                     </div>
                     <div class="dayview-right">
                         <div class="dayview-controls">
                             <a href="#" class="control-left">&lt;</a>
-                            <a href="#" class="control-middle-selected">Week 38</a>
+                            <a href="#" class="control-middle-selected"  ><span data-bind="text: currentWeek"></span></a>
                             <a href="#" class="control-right">&gt;</a>
                         </div>
                         <div class="dayview-calendar">
