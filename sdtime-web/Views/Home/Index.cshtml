@@ -9,10 +9,13 @@
             var sd = { ui: { setSelectedWeekday: function (today) { $("." + today.format("ddd")).addClass("selected"); } } }
 
             $(document).ready(function () {
+                // MOCK MODEL - WIP
                 var DayViewModel = function () {
-                    this.currentWeek = ko.observable("Week ?? (TODO)");
                     this.today = ko.observable(d.format("mm / dd"));
                     this.weekday = ko.observable(d.format("dddd"));
+                    this.currentWeek = ko.observable("Week ?? (TODO)");
+
+                    this.WeekTotals = {};
                 };
                 ko.applyBindings(new DayViewModel());
 
