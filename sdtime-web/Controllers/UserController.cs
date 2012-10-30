@@ -3,19 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Microsoft.IdentityModel.Claims;
-
 using GA.Core.Security;
-using sdtime.Security;
+using Microsoft.IdentityModel.Claims;
 
 namespace sdtime.Controllers
 {
-    public class HomeController : Controller
+    public class UserController : Controller
     {
         //
-        // GET: /Home/
+        // GET: /User/
 
-        public ActionResult Index()
+        public ActionResult ViewProfile()
         {
             var mgr = new UserManager();
             var id = User.Identity as ClaimsIdentity;
@@ -23,7 +21,7 @@ namespace sdtime.Controllers
             {
                 var claims = id.Claims;
                 var data = claims.GetClaimsInfo();
-                if (!mgr.UserExists(data.IdentityProviderName, data.ProviderKey)) 
+                if (!mgr.UserExists(data.IdentityProviderName, data.ProviderKey))
                     return RedirectToAction("Index", "RegisterUser");
                 var user = mgr.GetUserByKey(data.IdentityProviderName, data.ProviderKey);
                 ViewBag.Username = user.DisplayName;
@@ -31,6 +29,7 @@ namespace sdtime.Controllers
                 ViewBag.MemerSince = user.MemberSince.GetValueOrDefault().ToString("mm/dd/yy");
             }
             return View();
+            
         }
 
     }
