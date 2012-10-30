@@ -40,7 +40,7 @@ namespace sdtime.Controllers
                 if (this._checkCWID(data.ConnectwiseID))
                 {
                     var mgr = new UserManager();
-                    var user = new User { EmailAddress = data.EmailAddress, DisplayName = data.ConnectwiseID, IdentityProviderKey = data.ProviderKey, IdentityProviderName = data.IdentityProviderName };
+                    var user = new User { IsActive = true, MemberSince = DateTime.Now, EmailAddress = data.EmailAddress, DisplayName = data.ConnectwiseID, IdentityProviderKey = data.ProviderKey, IdentityProviderName = data.IdentityProviderName };
                     mgr.RegisterNewUser(user);
                 }
                 else

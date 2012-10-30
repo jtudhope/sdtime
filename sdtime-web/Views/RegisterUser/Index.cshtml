@@ -47,34 +47,38 @@
 <fieldset>
     <legend>Login Info</legend>
 
-    <div class="display-label">Provider Info</div>
+    <div class="display-label">Provider Name</div>
     <div class="display-field">
         @Html.DisplayFor(model => model.IdentityProviderName)
     </div>
-    <div class="display-field">
+    <div class="display-field" style="display:none;">
         @Html.DisplayFor(model => model.ProviderKey)
     </div>
-    <div>&nbsp;</div>
+    
     @using(Html.BeginForm("Submit", "RegisterUser", FormMethod.Post)) {
-        
-
-
-    <div class="display-label">Display Name: </div>
-    <div class="display-field">
-        @Html.EditorFor(model => model.DisplayName)
-    </div>
-
     <div class="display-label">Email Address: </div>
     <div class="display-field">
         @Html.EditorFor(model => model.EmailAddress)
     </div>
+        
+    <div>
+        <span><h3>Please link your identity to your Connectwise account.  Connect with your username or email address below.</h3></span>
+    </div>
 
-    <div class="display-label">Connectwise ID/Name: </div>
+    <div class="display-label">Connectwise Search Fields: </div>
+    <div class="display-label">Username: </div>
     <div class="display-field">
         @Html.EditorFor(model => model.ConnectwiseID)
+
+        
+    </div>
+    <div class="display-label">Email Address: </div>
+    <div class="display-field">
         <input type="text" name="cwemail" id="cwemail" />
         <input type="button" value="Connect" onclick="javascript:local.CheckCWIdentity();" />
-    </div>
+        
+    </div>    
+        
 
 
 
