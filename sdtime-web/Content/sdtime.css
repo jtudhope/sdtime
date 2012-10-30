@@ -529,17 +529,26 @@ span.total-time {
 .dayview-summary {
 }
 
-.dayview-no-entries {
-	display: block;
+.dayview-list {
 	width: 768px;
 	height: 345px;
 	background: #FAFAFA;
 	border: 1px solid #CCC;
 	border-top: none;
+	padding-top: 1px;
+	
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
-	line-height: 345px;
-	text-align: center;
+	
+}
+
+.entryItem  
+{
+    height: 80px;
+    border: 1px dotted black;
+    list-style-type: none;
+    margin-right: 5px;
+    margin-left:-35px;
 }
 
 .dayview-no-entries > div {

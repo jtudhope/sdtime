@@ -15,7 +15,17 @@
                     this.weekday = ko.observable(d.format("dddd"));
                     this.currentWeek = ko.observable("Week ?? (TODO)");
 
-                    this.WeekTotals = {};
+                    // TODO: Bind with Templates
+                    this.WeekTotals = ko.observableArray([
+                        0.00, 0.99, 7.00, 0.25, 0.00, 0.46, 0.33, 12.00
+                    ]);
+
+                    this.Entries = ko.observableArray([
+                       { Title: "Time Entry 1", Amount: 6.25, Client: "SD" },
+                       { Title : "Time Entry 1", Amount : 6.25, Client : "SD" },
+                       { Title : "Time Entry 1", Amount : 6.25, Client : "SD" },
+                       { Title : "Time Entry 1", Amount : 6.25, Client : "SD" }
+                    ]);
                 };
                 ko.applyBindings(new DayViewModel());
 
@@ -58,16 +68,16 @@
                     <div class="dayview-tablecol">
                         <ul class="dayview-days">
                             <li>
-                                <a href="#" class="first Mon">Mon <span>0.00</span></a>
+                                <a href="#" class="first Mon">Mon <span >0.00</span></a>
                             </li>
                             <li>
-                                <a href="#" class="Tue">Tue <span>0.00</span></a>
+                                <a href="#" class="Tue">Tue <span >0.00</span></a>
                             </li>
                             <li>
-                                <a href="#"  class="Wed">Wed <span>0.00</span></a>
+                                <a href="#"  class="Wed">Wed <span >0.00</span></a>
                             </li>
                             <li>
-                                <a href="#" class="Thu">Thu <span>0.00</span></a>
+                                <a href="#" class="Thu">Thu <span >0.00</span></a>
                             </li>
                             <li>
                                 <a href="#"  class="Fri">Fri <span>0.00</span></a>
@@ -84,10 +94,20 @@
                         </ul>
                         <div style="clear: both;"></div>
                         
-                        <div class="dayview-summary">
-                            <div class="dayview-no-entries">
-                                <div>"Ryan Gellis is the best developer ever. Now do your timesheets." <span>- Ryan Gellis</span></div>
+                        <div class="dayview-summary" data-bind="items: Entries">
+                            <div class="dayview-list" >
+                                <div style="display:none;">"Ryan Gellis is the best developer ever. Now do your timesheets." <span>- Ryan Gellis</span></div>
+                                <ul  data-bind="foreach: Entries">
+                                <li class="entryItem">
+                                    <div>
+                                        <span data-bind="text: Title"></span>
+                                        <span data-bind="text: Amount"></span>
+                                        <span data-bind="text: Client"></span>
+                                    </div>
+                                </li>
+                            </ul>
                             </div>
+                            
                         </div>
                     </div>
                     <div style="clear: both;"></div>
