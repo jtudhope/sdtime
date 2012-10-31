@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="UserDb" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+  <EntityContainer Name="UserDbContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Users" EntityType="UserDb.User" />
+    <EntitySet Name="UserEmailConfirmations" EntityType="UserDb.UserEmailConfirmation" />
+    <AssociationSet Name="UserUserEmailConfirmation" Association="UserDb.UserUserEmailConfirmation">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UserEmailConfirmation" EntitySet="UserEmailConfirmations" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="DisplayName" Nullable="false" />
+    <Property Type="String" Name="EmailAddress" Nullable="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+    <Property Type="DateTime" Name="MemberSince" Nullable="true" />
+    <Property Type="String" Name="IdentityProviderKey" Nullable="false" />
+    <Property Type="String" Name="IdentityProviderName" Nullable="false" />
+    <NavigationProperty Name="Confirmations" Relationship="UserDb.UserUserEmailConfirmation" FromRole="User" ToRole="UserEmailConfirmation" />
+  </EntityType>
+  <EntityType Name="UserEmailConfirmation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="SentOn" Nullable="true" />
+    <Property Type="DateTime" Name="ConfirmedOn" Nullable="true" />
+    <NavigationProperty Name="User" Relationship="UserDb.UserUserEmailConfirmation" FromRole="UserEmailConfirmation" ToRole="User" />
+    <Property Type="Int32" Name="UserId" Nullable="false" />
+  </EntityType>
+  <Association Name="UserUserEmailConfirmation">
+    <End Type="UserDb.User" Role="User" Multiplicity="1" />
+    <End Type="UserDb.UserEmailConfirmation" Role="UserEmailConfirmation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserEmailConfirmation">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
