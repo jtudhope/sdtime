@@ -526,7 +526,9 @@ span.total-time {
 	font-weight: bold;
 }
 
-.dayview-summary {
+.dayview-summary 
+{
+    
 }
 
 .dayview-list {

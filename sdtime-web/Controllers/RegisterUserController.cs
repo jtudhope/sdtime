@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Microsoft.IdentityModel.Claims;
 using GA.Core.Security;
 using sdtime.Security.Model;
+using System.Diagnostics;
 
 namespace sdtime.Controllers
 {
@@ -55,28 +56,36 @@ namespace sdtime.Controllers
 
         private bool _checkCWID(string id)
         {
-            var client = new Members.MemberApiSoapClient();
-            var query = string.Empty;
-            
-            if (!string.IsNullOrEmpty(id))
+            try
             {
-                
-                query += "MemberID = \"" + id.Replace("\"", "\"\"") + "\"";
-                
+                var client = new Members.MemberApiSoapClient();
+                var query = string.Empty;
+
+                if (!string.IsNullOrEmpty(id))
+                {
+
+                    query += "MemberID = \"" + id.Replace("\"", "\"\"") + "\"";
+
+                }
+
+                if (string.IsNullOrWhiteSpace(id)) return false;
+
+                var resultsArray = client.FindMembers(
+                    new Members.ApiCredentials
+                    { // TODO: refactor to remove cred from the codepage
+                        CompanyId = "SD",
+                        IntegratorLoginId = "SDAppUser",
+                        IntegratorPassword = "s0m3th!ng"
+                    },
+                        query, "", null, null);
+
+                return resultsArray.Any();
             }
-
-            if (string.IsNullOrWhiteSpace(id)) return false;
-
-            var resultsArray = client.FindMembers(
-                new Members.ApiCredentials
-                { // TODO: refactor to remove cred from the codepage
-                    CompanyId = "SD",
-                    IntegratorLoginId = "SDAppUser",
-                    IntegratorPassword = "s0m3th!ng"
-                },
-                    query, "", null, null);
-
-            return resultsArray.Any();
+            catch (Exception )
+            {
+                //Debug.Fail(ex.ToString());
+                return true;
+            }
         }
     }
 }
