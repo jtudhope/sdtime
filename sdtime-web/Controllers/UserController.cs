@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using GA.Core.Security;
 using Microsoft.IdentityModel.Claims;
+using sdtime.Util.Security;
 
 namespace sdtime.Controllers
 {

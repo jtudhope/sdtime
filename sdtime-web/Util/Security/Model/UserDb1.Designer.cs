@@ -19,11 +19,11 @@ using System.Xml.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
 
-[assembly: EdmRelationshipAttribute("UserDb", "UserUserEmailConfirmation", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(sdtime.Security.Model.User), "UserEmailConfirmation", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(sdtime.Security.Model.UserEmailConfirmation), true)]
+[assembly: EdmRelationshipAttribute("UserDb", "UserUserEmailConfirmation", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(sdtime.Util.Security.Model.User), "UserEmailConfirmation", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(sdtime.Util.Security.Model.UserEmailConfirmation), true)]
 
 #endregion
 
-namespace sdtime.Security.Model
+namespace sdtime.Util.Security.Model
 {
     #region Contexts
     

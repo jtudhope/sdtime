@@ -107,15 +107,18 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Security\ClaimCollectionExtensions.cs" />
-    <Compile Include="Security\ClaimsContants.cs" />
-    <Compile Include="Security\ClaimsInfo.cs" />
-    <Compile Include="Security\Model\UserDb1.Designer.cs">
+    <Compile Include="Util\Security\ClaimCollectionExtensions.cs" />
+    <Compile Include="Util\Security\ClaimsContants.cs" />
+    <Compile Include="Util\Security\ClaimsInfo.cs" />
+    <Compile Include="Util\Security\CWMockAdapter.cs" />
+    <Compile Include="Util\Security\ICWAdapter.cs" />
+    <Compile Include="Util\Security\CWAdapter.cs" />
+    <Compile Include="Util\Security\Model\UserDb1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>UserDb.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Security\UserManager.cs" />
+    <Compile Include="Util\Security\UserManager.cs" />
     <Compile Include="Service References\Members\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -204,7 +207,7 @@
     <Content Include="Scripts\plugins.js" />
     <Content Include="Scripts\underscore.js" />
     <Content Include="Scripts\underscore.min.js" />
-    <Content Include="Security\Model\UserDb.edmx.sql" />
+    <Content Include="Util\Security\Model\UserDb.edmx.sql" />
     <None Include="Service References\Members\MemberApi.disco" />
     <None Include="Service References\Members\configuration91.svcinfo" />
     <None Include="Service References\Members\configuration.svcinfo" />
@@ -249,7 +252,7 @@
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="Security\Model\UserDb.edmx">
+    <EntityDeploy Include="Util\Security\Model\UserDb.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>UserDb1.Designer.cs</LastGenOutput>
     </EntityDeploy>

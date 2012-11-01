@@ -5,8 +5,9 @@ using System.Web;
 using System.Web.Mvc;
 using Microsoft.IdentityModel.Claims;
 using GA.Core.Security;
-using sdtime.Security.Model;
 using System.Diagnostics;
+using sdtime.Util.Security.Model;
+using sdtime.Util.Security;
 
 namespace sdtime.Controllers
 {
@@ -54,38 +55,6 @@ namespace sdtime.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        private bool _checkCWID(string id)
-        {
-            try
-            {
-                var client = new Members.MemberApiSoapClient();
-                var query = string.Empty;
-
-                if (!string.IsNullOrEmpty(id))
-                {
-
-                    query += "MemberID = \"" + id.Replace("\"", "\"\"") + "\"";
-
-                }
-
-                if (string.IsNullOrWhiteSpace(id)) return false;
-
-                var resultsArray = client.FindMembers(
-                    new Members.ApiCredentials
-                    { // TODO: refactor to remove cred from the codepage
-                        CompanyId = "SD",
-                        IntegratorLoginId = "SDAppUser",
-                        IntegratorPassword = "s0m3th!ng"
-                    },
-                        query, "", null, null);
-
-                return resultsArray.Any();
-            }
-            catch (Exception )
-            {
-                //Debug.Fail(ex.ToString());
-                return true;
-            }
-        }
+        
     }
 }

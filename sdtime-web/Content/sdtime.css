@@ -142,7 +142,7 @@ a.new-time-entry:hover > span {
 }
 
 a.control-left {
-	display: block;
+	display: block; 
 	border: 1px solid #BBB;
 	border-right: none;
 	font: 13px Arial, Helvetica, sans-serif;
@@ -551,6 +551,22 @@ span.total-time {
     list-style-type: none;
     margin-right: 5px;
     margin-left:-35px;
+
+}
+
+.entry-title  
+{
+       
+}
+
+.entry-amt  
+{
+    
+}
+
+.entry-client
+{
+    
 }
 
 .dayview-no-entries > div {

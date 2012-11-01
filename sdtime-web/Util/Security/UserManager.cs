@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using GA.Core.Util;
-using sdtime.Security.Model;
+using sdtime.Util.Security.Model;
 
-namespace GA.Core.Security
+namespace sdtime.Util.Security
 {
     
     public class UserManager
