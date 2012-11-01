@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Dynamic;
+using GA.Core.Util;
+using sdtime.Util.Security;
 
 namespace sdtime.Controllers
 {
@@ -14,30 +16,10 @@ namespace sdtime.Controllers
             dynamic data = new ExpandoObject();
             try
             {
-                var client = new Members.MemberApiSoapClient();
-                // TODO: Async?
-                var query = string.Empty;
-                if (!String.IsNullOrEmpty(req.EmailAddress))
-                {
-                    query += "EmailAddress = \"" + req.EmailAddress.Replace("\"", "\"\"") + "\"";
-                }
-                if (!string.IsNullOrEmpty(req.Name))
-                {
-                    if (string.IsNullOrEmpty(query))
-                    {
-                        query += "MemberID = \"" + req.Name.Replace("\"", "\"\"") + "\"";
-                    }
-                    else
-                    {
-                        query += " And MemberID = \"" + req.Name.Replace("\"", "\"\"") + "\"";
-                    }
-                }
-                var resultsArray = client.FindMembers(
-                    new Members.ApiCredentials { // TODO: refactor to remove cred from the codepage
-                        CompanyId = "SD", IntegratorLoginId = "SDAppUser", IntegratorPassword = "s0m3th!ng" }, 
-                        query, "", null, null);
+                var cw = IOCContainer.Resolve<ICWAdapter>();
+                var resultsArray = cw.FindMember(req.Name, req.EmailAddress);
                 data.Results = resultsArray.FirstOrDefault(); // assume one match
-                data.HasError = true;
+                data.HasError = false;
             }
             catch (Exception ex)
             {

@@ -42,7 +42,7 @@ namespace sdtime.Controllers
 
                 var cw = IOCContainer.Resolve<ICWAdapter>();
                 
-                if (cw.CheckMemberIDExists(data.ConnectwiseID).GetValueOrDefault(false))
+                if (cw.CheckMemberIDExists(data.ConnectwiseID))
                 {
                     var mgr = new UserManager();
                     var user = new User { IsActive = true, MemberSince = DateTime.Now, EmailAddress = data.EmailAddress, DisplayName = data.ConnectwiseID, IdentityProviderKey = data.ProviderKey, IdentityProviderName = data.IdentityProviderName };
