@@ -11,7 +11,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>sdtime</RootNamespace>
-    <AssemblyName>sdtime-web</AssemblyName>
+    <AssemblyName>sdtime</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -110,9 +110,9 @@
     <Compile Include="Util\Security\ClaimCollectionExtensions.cs" />
     <Compile Include="Util\Security\ClaimsContants.cs" />
     <Compile Include="Util\Security\ClaimsInfo.cs" />
-    <Compile Include="Util\Security\CWMockAdapter.cs" />
-    <Compile Include="Util\Security\ICWAdapter.cs" />
-    <Compile Include="Util\Security\CWAdapter.cs" />
+    <Compile Include="Util\Security\CW\CWMockAdapter.cs" />
+    <Compile Include="Util\Security\CW\ICWAdapter.cs" />
+    <Compile Include="Util\Security\CW\CWAdapter.cs" />
     <Compile Include="Util\Security\Model\UserDb1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

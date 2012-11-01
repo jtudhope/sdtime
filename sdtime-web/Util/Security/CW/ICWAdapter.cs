@@ -7,6 +7,6 @@ namespace sdtime.Util.Security
 {
     public interface ICWAdapter
     {
-
+        bool? CheckMemberIDExists(string id);
     }
 }

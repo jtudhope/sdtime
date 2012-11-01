@@ -8,6 +8,7 @@ using GA.Core.Security;
 using System.Diagnostics;
 using sdtime.Util.Security.Model;
 using sdtime.Util.Security;
+using GA.Core.Util;
 
 namespace sdtime.Controllers
 {
@@ -39,7 +40,9 @@ namespace sdtime.Controllers
 
                 data.ConnectwiseID = collection["ConnectwiseID"];
 
-                if (this._checkCWID(data.ConnectwiseID))
+                var cw = IOCContainer.Resolve<ICWAdapter>();
+                
+                if (cw.CheckMemberIDExists(data.ConnectwiseID).GetValueOrDefault(false))
                 {
                     var mgr = new UserManager();
                     var user = new User { IsActive = true, MemberSince = DateTime.Now, EmailAddress = data.EmailAddress, DisplayName = data.ConnectwiseID, IdentityProviderKey = data.ProviderKey, IdentityProviderName = data.IdentityProviderName };
@@ -55,6 +58,5 @@ namespace sdtime.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        
     }
 }
