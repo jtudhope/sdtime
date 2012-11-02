@@ -11,7 +11,7 @@
         var DayViewModel = function () {
             var _self = this;
             _self.WeekDayNames = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-            _self.today = ko.observable(d.format("mm / dd"));
+            _self.today = ko.observable(d.format("m / d"));
             _self.weekday = ko.observable(d.format("dddd"));
             _self.currentWeek = ko.computed(function (a, b, c) {
                 var wd = _self.weekday();
@@ -32,7 +32,7 @@
                     //$(".errordiv").text("what: " + weekend);
                     //debugger;
                     weekend.setDate(d.getDate() + (6 - _offset));
-                    $(".errordiv").text("what: " + weekend);
+                    //$(".errordiv").text("what: " + weekend);
                     var weekstartMonth = weekstart.format("mmm");
                     var weekstartDay = weekstart.format("d");
                     var weekendMonth = weekend.format("mmm");
@@ -145,8 +145,8 @@
                         <div style="clear: both;"></div>
                         
                         <div class="dayview-summary" data-bind="items: Entries">
-                            <div class="dayview-list" >
-                                <div>"Ryan Gellis is the best developer ever. Now do your timesheets." <span>- Ryan Gellis</span></div>
+                            <div  class="dayview-list" >
+                                <div class="ryanheader" >"Ryan Gellis is the best developer ever. Now do your timesheets." <span>- Ryan Gellis</span></div>
                                 <ul  data-bind="foreach: Entries">
                                 <li class="entryItem">
                                     <div>

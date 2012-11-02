@@ -4,18 +4,20 @@
 .header {
 	position: relative;
 	width: 100%;
-	height: 72px;
+	height: 56px;
 	background: url(../img/header-bg.png) repeat-x top left #f37511;
 }
 
 .sd-logo 
 {
+    font-family: sans-serif;
+    font-weight:700;
     position:absolute;
     top: 10px;
     left: 76px;
-    font-size: 36px;
-	margin-left: 12px;
-	color: #636363;
+    font-size: 28px;
+	margin-left: -10px;
+	color: white;
 }
 
 span.userwelcome  
@@ -32,7 +34,7 @@ a.userwelcome
 {
     margin-left: 4px;
     margin-top: 4px;
-    width: 64px; height: 64px;
+    width: 48px; height: 48px;
 }
 
 .subheader {
@@ -531,9 +533,12 @@ span.total-time {
     
 }
 
+.ryanheader { font-size: xx-large; }
+
 .dayview-list {
 	width: 768px;
 	height: 345px;
+	
 	background: #FAFAFA;
 	border: 1px solid #CCC;
 	border-top: none;
