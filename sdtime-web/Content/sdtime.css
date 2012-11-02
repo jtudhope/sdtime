@@ -583,3 +583,5 @@ span.total-time {
 	font-weight: normal;
 	font-size: 16px;
 }
+
+.errorpanel { color: Red; margin-left: 25px; }
