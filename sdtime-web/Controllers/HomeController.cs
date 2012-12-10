@@ -26,7 +26,7 @@ namespace sdtime.Controllers
                 var user = mgr.GetUserByKey(data.IdentityProviderName, data.ProviderKey);
                 ViewBag.Username = user.DisplayName;
                 ViewBag.ProviderName = user.IdentityProviderName;
-                ViewBag.MemerSince = user.MemberSince.GetValueOrDefault().ToString("mm/dd/yy");
+                ViewBag.MemberSince = user.MemberSince.GetValueOrDefault().ToString("mm/dd/yy");
             }
             return View();
         }
