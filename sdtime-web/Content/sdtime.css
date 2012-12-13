@@ -58,6 +58,7 @@ a.userwelcome
 
 .content {
 	padding-top: 40px;
+    overflow: hidden;
 }
 
 a.new-time-entry {
@@ -404,6 +405,7 @@ a.toggle-week-selected {
 
 .dayview-tablecol {
 	width: 770px;
+    margin-right: 85px;
 	float: left;
 }
 
@@ -561,6 +563,7 @@ span.total-time {
 .dayview-entry-list {
     list-style: none;
     width: 770px;
+    margin-top: 0;
     padding-left: 0;
 }
 
