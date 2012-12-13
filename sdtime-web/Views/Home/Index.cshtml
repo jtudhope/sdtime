@@ -4,6 +4,7 @@
 <script src="../../Scripts/borrowed/dateFormat.util.js" type="text/javascript"></script>
 <script src="../../Scripts/jquery-1.8.2.min.js" type="text/javascript"></script>
 <script src="../../Scripts/knockout-2.1.0.debug.js" type="text/javascript"></script>
+<script src="../../Scripts/sdtime.js" type="text/javascript"></script>
     <script type="text/javascript" id="sdtime-mock-model">
         var d = new Date();
 
@@ -116,6 +117,7 @@
                     </div>
                     <div class="dayview-tablecol">
                         @*TODO: Make this UL databound with ko*@
+
                         <ul class="dayview-days">
                             <li>
                                 <a href="#" class="first Mon">Mon <span >0.00</span></a>
@@ -146,16 +148,13 @@
                         
                         <div class="dayview-summary" data-bind="items: Entries">
                             <div  class="dayview-list" >
-                                <div class="dayview-notime" >You have no timesheet entries for this day.</div>
-                                <ul  data-bind="foreach: Entries">
-                                <li class="entryItem">
-                                    <div>
-                                        <div style="float: left;"><span class="entry-title" data-bind="text: Title"></span></div>
-                                        <div style="float: left;"><span class="entry-amt" data-bind="text: Amount"></span></div>
-                                        <div style="float: left;"><span class="entry-client" data-bind="text: Client"></span></div>
-                                    </div>
-                                </li>
-                            </ul>
+
+                                @*<div class="dayview-notime" >You have no timesheet entries for this day.</div>*@
+
+                                <div class="ryanheader" >
+                                    @Html.Partial("Tickets")
+                                </div>
+
                             </div>
                             
                         </div>

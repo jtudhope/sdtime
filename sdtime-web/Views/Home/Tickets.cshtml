@@ -1,0 +1,18 @@
+﻿<ul data-bind="foreach: tickets">
+    <li>
+        <div style="float:left" data-bind="text: summary" ></div>
+        <div style="float:left" data-bind="text: time"></div>
+        <div style="float:left" data-bind="if: showRecord" >
+            <div class="button" data-bind="click: record">
+                <img src="record.gif" />
+            </div>
+        </div>
+
+        <div style="float:left" data-bind="if: showStop" >
+            <div class="button" data-bind="click: stop">
+                <img src="stop.gif" />
+            </div>
+        </div>
+
+    </li>
+</ul>
