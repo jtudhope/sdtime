@@ -244,6 +244,7 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <Content Include="Views\User\ViewProfile.cshtml" />
+    <Content Include="Views\Home\Tickets.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
