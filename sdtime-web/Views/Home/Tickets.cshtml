@@ -1,6 +1,9 @@
 ﻿<ul data-bind="foreach: tickets">
     <li>
-        <div style="float:left" data-bind="text: summary" ></div>
+        <div style="float:left; clear:left;">
+            <div data-bind="text: client" ></div>
+            <div data-bind="text: summary" ></div>
+        </div>
         <div style="float:left" data-bind="text: time"></div>
         <div style="float:left" data-bind="if: showRecord" >
             <div class="button" data-bind="click: record">
