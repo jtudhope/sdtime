@@ -558,6 +558,67 @@ span.total-time {
 	
 }
 
+.dayview-entry-list {
+    list-style: none;
+    width: 770px;
+    padding-left: 0;
+}
+
+.dayview-entry {
+    border-bottom: 1px solid #CCC;
+    font-size: 13px;
+    transition: background 0.1s linear;
+}
+
+.dayview-entry td {
+    padding: 16px 15px;
+    vertical-align: top;
+    word-wrap: break-word;
+}
+
+.entry-info {
+    width: 505px;
+    word-wrap: break-word;
+}
+
+.dayview-entry .project-client {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+.dayview-entry .client {
+    color: #444;
+    font-weight: bold;
+}
+
+.dayview-entry .task-notes {
+    color: #777;
+}
+
+.dayview-entry .entry-time {
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 39px;
+    text-align: right;
+    width: 55px;
+}
+
+.dayview-entry .entry-button {
+    line-height: 37px;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: right;
+    width: 90px;
+}
+
+.dayview-entry .edit-button {
+    line-height: 37px;
+    width: 30px;
+}
+
+
+
 /* WEEK VIEW
 -----------------------------------------------*/
 
