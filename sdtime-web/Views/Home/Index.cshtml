@@ -146,7 +146,7 @@
                         
                         <div class="dayview-summary" data-bind="items: Entries">
                             <div  class="dayview-list" >
-                                <div class="ryanheader" >"Ryan Gellis is the best developer ever. Now do your timesheets." <span>- Ryan Gellis</span></div>
+                                <div class="dayview-notime" >You have no timesheet entries for this day.</div>
                                 <ul  data-bind="foreach: Entries">
                                 <li class="entryItem">
                                     <div>
@@ -163,6 +163,111 @@
                     <div style="clear: both;"></div>
                 </div>
                 <div style="clear: both;"></div>
+
+                <div class="weekview-content">
+                    <table border="0" cellpadding="0" cellspacing="0" class="weekview-table">
+                        <tr>
+                            <td class="name"></td>
+                            <td class="day">
+                                <a href="#" title="Monday">
+                                    M <span>10 Dec</span>
+                                </a>
+                            </td>
+                            <td class="day">
+                                <a href="#" title="Tuesday">
+                                    T <span>11 Dec</span>
+                                </a>
+                            </td>
+                            <td class="day">
+                                <a href="#" title="Wednesday">
+                                    W <span>12 Dec</span>
+                                </a>
+                            </td>
+                            <td class="day">
+                                <a href="#" title="Thursday">
+                                    Th <span>13 Dec</span>
+                                </a>
+                            </td>
+                            <td class="day">
+                                <a href="#" title="Friday">
+                                    F <span>14 Dec</span>
+                                </a>
+                            </td>
+                            <td class="day">
+                                <a href="#" title="Saturday">
+                                    S <span>15 Dec</span>
+                                </a>
+                            </td>
+                            <td class="day">
+                                <a href="#" title="Saturday">
+                                    S <span>16 Dec</span>
+                                </a>
+                            </td>
+                            <td class="total">&nbsp;</td>
+                            <td class="delete">&nbsp;</td>
+                        </tr>
+
+                        <tr class="weekview-entry">
+                            <td class="name">
+                                <div class="project-client">
+                                    <span class="project">Internal</span>
+                                    <span class="client">(SD)</span>
+                                </div>
+                                <div class="task">Admin</div>
+                            </td>
+                            <td class="day">
+                                <input type="text" class="input" value="" />
+                            </td>
+                            <td class="day">
+                                <input type="text" class="input" value="" />
+                            </td>
+                            <td class="day">
+                                <input type="text" class="input" value="" />
+                            </td>
+                            <td class="day">
+                                <input type="text" class="input" value="" />
+                            </td>
+                            <td class="day">
+                                <input type="text" class="input" value="" />
+                            </td>
+                            <td class="day">
+                                <input type="text" class="input" value="" />
+                            </td>
+                            <td class="day">
+                                <input type="text" class="input" value="" />
+                            </td>
+                            <td class="total">0</td>
+                            <td class="delete"><a href="#">x</a></td>
+                        </tr>
+
+                        <tr class="weekview-foot">
+                            <td class="name"></td>
+                            <td class="day">
+                                0
+                            </td>
+                            <td class="day">
+                                0
+                            </td>
+                            <td class="day">
+                                0
+                            </td>
+                            <td class="day">
+                                0
+                            </td>
+                            <td class="day">
+                                0
+                            </td>
+                            <td class="day">
+                                0
+                            </td>
+                            <td class="day">
+                                0
+                            </td>
+                            <td class="total">0</td>
+                            <td class="delete">&nbsp;</td>
+                        </tr>
+                    </table>
+                </div>
                 
             </div>
         </div>
