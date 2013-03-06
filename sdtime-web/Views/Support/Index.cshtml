@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+	<script type='text/javascript' src='../../Scripts/support/jquery-1.9.0.js'></script>
+	<script type='text/javascript' src='../../Scripts/support/jquery-ui-1.10.0.custom.min.js'></script>
+	<script type='text/javascript' src='../../Scripts/support/knockout.js'></script>
+	<script type='text/javascript' src='../../Scripts/support/model/modelTicketNote.js'></script>
+	<script type='text/javascript' src='../../Scripts/support/model/modelTicket.js'></script>
+	<script type='text/javascript' src='../../Scripts/support/model/modelBucket.js'></script>
+	<script type='text/javascript' src='../../Scripts/support/knockout-customBindings.js'></script>
+
+
+<div data-bind="foreach: buckets" id="container">
+		<div class="bucket">
+			<h1 data-bind="text: name"></h1>
+			<ul>
+				<li class="drop-placeholder" data-bind="drop: {params: $data, index: 0}"></li>
+				<!-- ko foreach: tickets -->
+				
+			    <li data-bind="drag: {value: $data}">
+					<div class="ticket">
+						<h2 data-bind="text: client"></h2>
+						<h3 data-bind="text: name"></h3>
+						<div>Budget:<span type="text" data-bind="text: budget"></span></div>
+					</div>
+				</li>
+				<li class="drop-placeholder" data-bind="drop: {params: $parent, index: $index}"></li>
+			    <!-- /ko -->
+				
+			</ul>
+		</div>		   
+	</div>
+	
+    <script type='text/javascript' src='../../Scripts/support/viewModel/viewModelSupport.js'></script>

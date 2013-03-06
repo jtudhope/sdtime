@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ConnectWiseModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="ConnectWiseModelStoreContainer">
+          <EntitySet Name="somethingdigital_vTickets" EntityType="ConnectWiseModel.Store.somethingdigital_vTickets" store:Type="Views" store:Schema="dbo" store:Name="somethingdigital_vTickets">
+            <DefiningQuery>SELECT 
+      [somethingdigital_vTickets].[ticketid] AS [ticketid], 
+      [somethingdigital_vTickets].[Employee] AS [Employee], 
+      [somethingdigital_vTickets].[budget] AS [budget], 
+      [somethingdigital_vTickets].[actualHours] AS [actualHours], 
+      [somethingdigital_vTickets].[client] AS [client], 
+      [somethingdigital_vTickets].[name] AS [name], 
+      [somethingdigital_vTickets].[status] AS [status], 
+      [somethingdigital_vTickets].[schedule_type_id] AS [schedule_type_id], 
+      [somethingdigital_vTickets].[scheduleDate] AS [scheduleDate], 
+      [somethingdigital_vTickets].[Sort_Order] AS [Sort_Order]
+      FROM [dbo].[somethingdigital_vTickets] AS [somethingdigital_vTickets]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'cwwebapp_sd.dbo.somethingdigital_vTickets' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="somethingdigital_vTickets">
+          <Key>
+            <PropertyRef Name="ticketid" />
+            <PropertyRef Name="status" />
+          </Key>
+          <Property Name="ticketid" Type="int" Nullable="false" />
+          <Property Name="Employee" Type="varchar" MaxLength="61" />
+          <Property Name="budget" Type="decimal" Scale="2" />
+          <Property Name="actualHours" Type="decimal" Precision="38" Scale="2" />
+          <Property Name="client" Type="varchar" MaxLength="50" />
+          <Property Name="name" Type="varchar" MaxLength="100" />
+          <Property Name="status" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="schedule_type_id" Type="char" MaxLength="1" />
+          <Property Name="scheduleDate" Type="datetime" />
+          <Property Name="Sort_Order" Type="smallint" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ConnectWiseModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="ConnectWiseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="somethingdigital_vTickets" EntityType="ConnectWiseModel.somethingdigital_vTickets" />
+        </EntityContainer>
+        <EntityType Name="somethingdigital_vTickets">
+          <Key>
+            <PropertyRef Name="ticketid" />
+            <PropertyRef Name="status" />
+          </Key>
+          <Property Name="ticketid" Type="Int32" Nullable="false" />
+          <Property Name="Employee" Type="String" MaxLength="61" Unicode="false" FixedLength="false" />
+          <Property Name="budget" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="actualHours" Type="Decimal" Precision="38" Scale="2" />
+          <Property Name="client" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="name" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="status" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="schedule_type_id" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="scheduleDate" Type="DateTime" />
+          <Property Type="Int16" Name="Sort_Order" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ConnectWiseModelStoreContainer" CdmEntityContainer="ConnectWiseEntities">
+          <EntitySetMapping Name="somethingdigital_vTickets"><EntityTypeMapping TypeName="ConnectWiseModel.somethingdigital_vTickets"><MappingFragment StoreEntitySet="somethingdigital_vTickets">
+            <ScalarProperty Name="Sort_Order" ColumnName="Sort_Order" />
+                <ScalarProperty Name="ticketid" ColumnName="ticketid" />
+            <ScalarProperty Name="Employee" ColumnName="Employee" />
+            <ScalarProperty Name="budget" ColumnName="budget" />
+            <ScalarProperty Name="actualHours" ColumnName="actualHours" />
+            <ScalarProperty Name="client" ColumnName="client" />
+            <ScalarProperty Name="name" ColumnName="name" />
+            <ScalarProperty Name="status" ColumnName="status" />
+            <ScalarProperty Name="schedule_type_id" ColumnName="schedule_type_id" />
+            <ScalarProperty Name="scheduleDate" ColumnName="scheduleDate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="ConnectWise">
+        <EntityTypeShape EntityType="ConnectWiseModel.somethingdigital_vTickets" Width="1.5" PointX="0.75" PointY="0.75" Height="2.41404296875" IsExpanded="true" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

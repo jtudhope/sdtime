@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ConnectWiseModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="ConnectWiseModelStoreContainer">
+    <EntitySet Name="somethingdigital_vTickets" EntityType="ConnectWiseModel.Store.somethingdigital_vTickets" store:Type="Views" store:Schema="dbo" store:Name="somethingdigital_vTickets">
+      <DefiningQuery>SELECT 
+      [somethingdigital_vTickets].[ticketid] AS [ticketid], 
+      [somethingdigital_vTickets].[Employee] AS [Employee], 
+      [somethingdigital_vTickets].[budget] AS [budget], 
+      [somethingdigital_vTickets].[actualHours] AS [actualHours], 
+      [somethingdigital_vTickets].[client] AS [client], 
+      [somethingdigital_vTickets].[name] AS [name], 
+      [somethingdigital_vTickets].[status] AS [status], 
+      [somethingdigital_vTickets].[schedule_type_id] AS [schedule_type_id], 
+      [somethingdigital_vTickets].[scheduleDate] AS [scheduleDate], 
+      [somethingdigital_vTickets].[Sort_Order] AS [Sort_Order]
+      FROM [dbo].[somethingdigital_vTickets] AS [somethingdigital_vTickets]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'cwwebapp_sd.dbo.somethingdigital_vTickets' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="somethingdigital_vTickets">
+    <Key>
+      <PropertyRef Name="ticketid" />
+      <PropertyRef Name="status" />
+    </Key>
+    <Property Name="ticketid" Type="int" Nullable="false" />
+    <Property Name="Employee" Type="varchar" MaxLength="61" />
+    <Property Name="budget" Type="decimal" Scale="2" />
+    <Property Name="actualHours" Type="decimal" Precision="38" Scale="2" />
+    <Property Name="client" Type="varchar" MaxLength="50" />
+    <Property Name="name" Type="varchar" MaxLength="100" />
+    <Property Name="status" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="schedule_type_id" Type="char" MaxLength="1" />
+    <Property Name="scheduleDate" Type="datetime" />
+    <Property Name="Sort_Order" Type="smallint" />
+  </EntityType>
+</Schema>

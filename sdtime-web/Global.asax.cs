@@ -27,6 +27,8 @@ namespace sdtime_web
                 new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
             );
 
+            
+
         }
 
         protected void Application_Start()
