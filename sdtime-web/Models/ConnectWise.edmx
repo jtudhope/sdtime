@@ -17,7 +17,9 @@
       [somethingdigital_vTickets].[status] AS [status], 
       [somethingdigital_vTickets].[schedule_type_id] AS [schedule_type_id], 
       [somethingdigital_vTickets].[scheduleDate] AS [scheduleDate], 
-      [somethingdigital_vTickets].[Sort_Order] AS [Sort_Order]
+      [somethingdigital_vTickets].[Sort_Order] AS [Sort_Order], 
+      [somethingdigital_vTickets].[employeeId] AS [employeeId], 
+      [somethingdigital_vTickets].[clientId] AS [clientId]
       FROM [dbo].[somethingdigital_vTickets] AS [somethingdigital_vTickets]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
@@ -39,6 +41,8 @@
           <Property Name="schedule_type_id" Type="char" MaxLength="1" />
           <Property Name="scheduleDate" Type="datetime" />
           <Property Name="Sort_Order" Type="smallint" />
+          <Property Name="employeeId" Type="int" />
+          <Property Name="clientId" Type="int" />
         </EntityType>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -62,6 +66,8 @@
           <Property Name="schedule_type_id" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
           <Property Name="scheduleDate" Type="DateTime" />
           <Property Type="Int16" Name="Sort_Order" />
+          <Property Type="Int32" Name="employeeId" />
+          <Property Type="Int32" Name="clientId" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -70,7 +76,9 @@
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="ConnectWiseModelStoreContainer" CdmEntityContainer="ConnectWiseEntities">
           <EntitySetMapping Name="somethingdigital_vTickets"><EntityTypeMapping TypeName="ConnectWiseModel.somethingdigital_vTickets"><MappingFragment StoreEntitySet="somethingdigital_vTickets">
-            <ScalarProperty Name="Sort_Order" ColumnName="Sort_Order" />
+            <ScalarProperty Name="clientId" ColumnName="clientId" />
+                <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+                <ScalarProperty Name="Sort_Order" ColumnName="Sort_Order" />
                 <ScalarProperty Name="ticketid" ColumnName="ticketid" />
             <ScalarProperty Name="Employee" ColumnName="Employee" />
             <ScalarProperty Name="budget" ColumnName="budget" />

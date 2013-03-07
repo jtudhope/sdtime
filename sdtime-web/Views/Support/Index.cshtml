@@ -10,7 +10,28 @@
 	<script type='text/javascript' src='../../Scripts/support/model/modelTicketNote.js'></script>
 	<script type='text/javascript' src='../../Scripts/support/model/modelTicket.js'></script>
 	<script type='text/javascript' src='../../Scripts/support/model/modelBucket.js'></script>
+    <script type='text/javascript' src='../../Scripts/support/model/modelMember.js'></script>
+    <script type='text/javascript' src='../../Scripts/support/model/modelClient.js'></script>
 	<script type='text/javascript' src='../../Scripts/support/knockout-customBindings.js'></script>
+
+<div class="employee-filter">
+    <select id="employee-filter" data-bind="options: members, optionsText: 'fullName', value: selectedMember,  event:{ change: addSelectedEmployee}"></select>
+    <div class="filter-selected" data-bind="foreach: selectedMembers">
+        <div class="filterItem">
+            <div data-bind="text: fullName, event : { click : removeSelectedEmployee }" />
+        </div>
+    </div>
+</div>
+
+
+<div class="client-filter">
+    <select id="client-filter" data-bind="options: clients, optionsText: 'clientName', value: selectedClient,  event:{ change: addSelectedClient}"></select>
+    <div class="filter-selected" data-bind="foreach: selectedClients">
+        <div class="filterItem">
+            <div data-bind="text: clientName, event : { click : removeSelectedClient }" />
+        </div>
+    </div>
+</div>
 
 
 <div data-bind="foreach: buckets" id="container">
@@ -25,6 +46,7 @@
 						<h2 data-bind="text: client"></h2>
 						<h3 data-bind="text: name"></h3>
 						<div>Budget:<span type="text" data-bind="text: budget"></span></div>
+                        <div>Assigned:<b><span type="text" data-bind="text: assigned"></span></b></div>
 					</div>
 				</li>
 				<li class="drop-placeholder" data-bind="drop: {params: $parent, index: $index}"></li>

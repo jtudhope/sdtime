@@ -63,3 +63,14 @@
     font-style:italic;
     color:#999;
 }
+
+.employeeFilter 
+{
+    float:left;
+    width:50px;
+}
+
+.employeeFilter.div 
+{
+    float:left;
+}

@@ -371,6 +371,54 @@ namespace sdtime.Models
         private Nullable<global::System.Int16> _Sort_Order;
         partial void OnSort_OrderChanging(Nullable<global::System.Int16> value);
         partial void OnSort_OrderChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> employeeId
+        {
+            get
+            {
+                return _employeeId;
+            }
+            set
+            {
+                OnemployeeIdChanging(value);
+                ReportPropertyChanging("employeeId");
+                _employeeId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("employeeId");
+                OnemployeeIdChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _employeeId;
+        partial void OnemployeeIdChanging(Nullable<global::System.Int32> value);
+        partial void OnemployeeIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> clientId
+        {
+            get
+            {
+                return _clientId;
+            }
+            set
+            {
+                OnclientIdChanging(value);
+                ReportPropertyChanging("clientId");
+                _clientId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("clientId");
+                OnclientIdChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _clientId;
+        partial void OnclientIdChanging(Nullable<global::System.Int32> value);
+        partial void OnclientIdChanged();
 
         #endregion
     

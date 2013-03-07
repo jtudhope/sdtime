@@ -124,6 +124,9 @@
       <DependentUpon>ConnectWise.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Support\Bucket.cs" />
+    <Compile Include="Models\Support\Client.cs" />
+    <Compile Include="Models\Support\Member.cs" />
+    <Compile Include="Models\Support\SupportResponse.cs" />
     <Compile Include="Models\Support\Ticket.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util\Security\ClaimCollectionExtensions.cs" />
@@ -232,6 +235,8 @@
     <Content Include="Scripts\support\knockout-customBindings.js" />
     <Content Include="Scripts\support\knockout.js" />
     <Content Include="Scripts\support\model\modelBucket.js" />
+    <Content Include="Scripts\support\model\modelClient.js" />
+    <Content Include="Scripts\support\model\modelMember.js" />
     <Content Include="Scripts\support\model\modelTicket.js" />
     <Content Include="Scripts\support\model\modelTicketNote.js" />
     <Content Include="Scripts\support\viewModel\viewModelSupport.js" />

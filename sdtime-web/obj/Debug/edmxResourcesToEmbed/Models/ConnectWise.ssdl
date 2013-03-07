@@ -12,7 +12,9 @@
       [somethingdigital_vTickets].[status] AS [status], 
       [somethingdigital_vTickets].[schedule_type_id] AS [schedule_type_id], 
       [somethingdigital_vTickets].[scheduleDate] AS [scheduleDate], 
-      [somethingdigital_vTickets].[Sort_Order] AS [Sort_Order]
+      [somethingdigital_vTickets].[Sort_Order] AS [Sort_Order], 
+      [somethingdigital_vTickets].[employeeId] AS [employeeId], 
+      [somethingdigital_vTickets].[clientId] AS [clientId]
       FROM [dbo].[somethingdigital_vTickets] AS [somethingdigital_vTickets]</DefiningQuery>
     </EntitySet>
   </EntityContainer>
@@ -34,5 +36,7 @@
     <Property Name="schedule_type_id" Type="char" MaxLength="1" />
     <Property Name="scheduleDate" Type="datetime" />
     <Property Name="Sort_Order" Type="smallint" />
+    <Property Name="employeeId" Type="int" />
+    <Property Name="clientId" Type="int" />
   </EntityType>
 </Schema>

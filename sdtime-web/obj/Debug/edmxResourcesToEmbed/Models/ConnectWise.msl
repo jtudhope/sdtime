@@ -4,6 +4,8 @@
     <EntitySetMapping Name="somethingdigital_vTickets">
       <EntityTypeMapping TypeName="ConnectWiseModel.somethingdigital_vTickets">
         <MappingFragment StoreEntitySet="somethingdigital_vTickets">
+          <ScalarProperty Name="clientId" ColumnName="clientId" />
+          <ScalarProperty Name="employeeId" ColumnName="employeeId" />
           <ScalarProperty Name="Sort_Order" ColumnName="Sort_Order" />
           <ScalarProperty Name="ticketid" ColumnName="ticketid" />
           <ScalarProperty Name="Employee" ColumnName="Employee" />

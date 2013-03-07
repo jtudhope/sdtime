@@ -18,5 +18,7 @@
     <Property Name="schedule_type_id" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
     <Property Name="scheduleDate" Type="DateTime" />
     <Property Type="Int16" Name="Sort_Order" />
+    <Property Type="Int32" Name="employeeId" />
+    <Property Type="Int32" Name="clientId" />
   </EntityType>
 </Schema>
