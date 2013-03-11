@@ -1,0 +1,585 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ConnectwiseModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="ConnectwiseModelStoreContainer">
+          <EntitySet Name="SR_Service" EntityType="ConnectwiseModel.Store.SR_Service" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SR_Status" EntityType="ConnectwiseModel.Store.SR_Status" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="somethingdigital_vTickets" EntityType="ConnectwiseModel.Store.somethingdigital_vTickets" store:Type="Views" store:Schema="dbo" store:Name="somethingdigital_vTickets">
+            <DefiningQuery>SELECT 
+      [somethingdigital_vTickets].[ticketid] AS [ticketid], 
+      [somethingdigital_vTickets].[Employee] AS [Employee], 
+      [somethingdigital_vTickets].[budget] AS [budget], 
+      [somethingdigital_vTickets].[actualHours] AS [actualHours], 
+      [somethingdigital_vTickets].[client] AS [client], 
+      [somethingdigital_vTickets].[name] AS [name], 
+      [somethingdigital_vTickets].[status] AS [status], 
+      [somethingdigital_vTickets].[schedule_type_id] AS [schedule_type_id], 
+      [somethingdigital_vTickets].[scheduleDate] AS [scheduleDate], 
+      [somethingdigital_vTickets].[Sort_Order] AS [Sort_Order], 
+      [somethingdigital_vTickets].[employeeId] AS [employeeId], 
+      [somethingdigital_vTickets].[clientId] AS [clientId], 
+      [somethingdigital_vTickets].[statusId] AS [statusId], 
+      [somethingdigital_vTickets].[boardId] AS [boardId]
+      FROM [dbo].[somethingdigital_vTickets] AS [somethingdigital_vTickets]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+        <EntityType Name="SR_Service">
+          <Key>
+            <PropertyRef Name="SR_Service_RecID" />
+          </Key>
+          <Property Name="Owner_ID" Type="int" />
+          <Property Name="SR_Service_RecID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SR_Type_RecID" Type="int" />
+          <Property Name="SR_Location_RecID" Type="int" />
+          <Property Name="SR_Status_RecID" Type="int" />
+          <Property Name="SR_Source_RecID" Type="int" />
+          <Property Name="SR_Urgency_RecID" Type="int" />
+          <Property Name="Contract_RecID" Type="int" />
+          <Property Name="SR_Team_RecID" Type="int" />
+          <Property Name="Entered_By" Type="varchar" MaxLength="15" />
+          <Property Name="Entered_Notify_Flag" Type="bit" Nullable="false" />
+          <Property Name="Date_Entered" Type="datetime" />
+          <Property Name="Date_Req" Type="datetime" />
+          <Property Name="Company_RecID" Type="int" />
+          <Property Name="Contact_RecID" Type="int" />
+          <Property Name="Assigned_By_RecID" Type="int" />
+          <Property Name="Assigned_Notify_Flag" Type="bit" Nullable="false" />
+          <Property Name="Billing_Unit_RecID" Type="int" />
+          <Property Name="Red_Flag" Type="bit" Nullable="false" />
+          <Property Name="Updated_By" Type="varchar" MaxLength="15" />
+          <Property Name="Last_Update" Type="datetime" />
+          <Property Name="Address_Line1" Type="varchar" MaxLength="50" />
+          <Property Name="Address_Line2" Type="varchar" MaxLength="50" />
+          <Property Name="City" Type="varchar" MaxLength="50" />
+          <Property Name="State_ID" Type="varchar" MaxLength="50" />
+          <Property Name="Zip" Type="varchar" MaxLength="12" />
+          <Property Name="Contact_Name" Type="varchar" MaxLength="62" />
+          <Property Name="PhoneNbr" Type="varchar" MaxLength="20" />
+          <Property Name="Extension" Type="varchar" MaxLength="15" />
+          <Property Name="Owner_Level_RecID" Type="int" />
+          <Property Name="Email_Address" Type="varchar" MaxLength="50" />
+          <Property Name="Summary" Type="varchar" MaxLength="100" />
+          <Property Name="Publish_Flag" Type="bit" Nullable="false" />
+          <Property Name="Closed_By" Type="varchar" MaxLength="15" />
+          <Property Name="Date_Closed" Type="datetime" />
+          <Property Name="DB_Timestamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+          <Property Name="Hours_Budget" Type="decimal" Scale="2" />
+          <Property Name="Time_Billable_Flag" Type="bit" />
+          <Property Name="TimeBillable_Flag" Type="bit" />
+          <Property Name="ExpBillable_Flag" Type="bit" />
+          <Property Name="Activity_Class_RecID" Type="int" />
+          <Property Name="Activity_Type_RecID" Type="int" />
+          <Property Name="PO_Number" Type="varchar" MaxLength="25" />
+          <Property Name="Reference" Type="varchar" MaxLength="50" />
+          <Property Name="EstRevenue" Type="decimal" Scale="2" />
+          <Property Name="BillComplete_Flag" Type="bit" />
+          <Property Name="BillUnapp_Flag" Type="bit" />
+          <Property Name="Bill_Method" Type="char" MaxLength="1" />
+          <Property Name="BillSR_Flag" Type="bit" />
+          <Property Name="Billing_Amount" Type="decimal" Scale="2" />
+          <Property Name="Company_Address_RecID" Type="int" />
+          <Property Name="TimeInvoice_Flag" Type="bit" />
+          <Property Name="ExpInvoice_Flag" Type="bit" />
+          <Property Name="ProdInvoice_Flag" Type="bit" />
+          <Property Name="ProdBillable_Flag" Type="bit" />
+          <Property Name="AGR_Header_RecID" Type="int" />
+          <Property Name="Override_Flag" Type="bit" />
+          <Property Name="SR_Billing_Method_ID" Type="char" MaxLength="1" />
+          <Property Name="AGR_Amount" Type="decimal" Scale="2" />
+          <Property Name="AGR_Month" Type="smallint" />
+          <Property Name="AGR_Year" Type="smallint" />
+          <Property Name="SR_Severity_RecID" Type="int" />
+          <Property Name="SR_Impact_RecID" Type="int" />
+          <Property Name="SR_Board_RecID" Type="int" />
+          <Property Name="Billing_Company_RecID" Type="int" />
+          <Property Name="Billing_Address_RecID" Type="int" />
+          <Property Name="External_Hours_Worked" Type="decimal" />
+          <Property Name="Opportunity_RecID" Type="int" />
+          <Property Name="Mobile_Guid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="nsn_guid" Type="varchar" MaxLength="50" />
+          <Property Name="from_cn_flag" Type="bit" Nullable="false" />
+          <Property Name="cwn_last_full_sync" Type="datetime" />
+          <Property Name="Approved_Flag" Type="bit" Nullable="false" />
+          <Property Name="External_Xref" Type="varchar" MaxLength="100" />
+          <Property Name="Site_Name" Type="varchar" MaxLength="50" />
+          <Property Name="Sub_Date_Accepted" Type="datetime" />
+          <Property Name="Sub_Company_Name" Type="varchar" MaxLength="50" />
+          <Property Name="Sub_Company_RecID" Type="int" />
+          <Property Name="Sub_Contact_Name" Type="varchar" MaxLength="62" />
+          <Property Name="Sub_Contact_RecID" Type="int" />
+          <Property Name="Sub_Email_Address" Type="varchar" MaxLength="50" />
+          <Property Name="Sub_PhoneNbr" Type="varchar" MaxLength="20" />
+          <Property Name="Sub_Extension" Type="varchar" MaxLength="15" />
+          <Property Name="Sub_Billing_Method_ID" Type="char" MaxLength="1" />
+          <Property Name="Sub_Billing_Amount" Type="decimal" Scale="2" />
+          <Property Name="Sub_Ticket_Nbr" Type="varchar" MaxLength="25" />
+          <Property Name="Sub_Override_Flag" Type="bit" />
+          <Property Name="Rejected_Flag" Type="bit" Nullable="false" />
+          <Property Name="Date_Rejected" Type="datetime" />
+          <Property Name="Cn_Survey_Completed_Flag" Type="bit" Nullable="false" />
+          <Property Name="PM_Phase_RecID" Type="int" />
+          <Property Name="WBS_Code" Type="varchar" MaxLength="50" />
+          <Property Name="Rec_Type" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="EmailContact_Flag" Type="bit" />
+          <Property Name="EmailResource_Flag" Type="bit" />
+          <Property Name="EmailCC_Flag" Type="bit" />
+          <Property Name="EmailCC" Type="varchar" MaxLength="1000" />
+          <Property Name="CustUpdate_Flag" Type="char" MaxLength="1" />
+          <Property Name="Country_RecID" Type="int" />
+          <Property Name="KB_Category_RecID" Type="int" />
+          <Property Name="KB_SubCategory_RecID" Type="int" />
+          <Property Name="KB_Link_RecID" Type="int" />
+          <Property Name="KB_Link_Type" Type="char" MaxLength="1" />
+          <Property Name="SR_SLA_RecID" Type="int" />
+          <Property Name="Order_Header_RecID" Type="int" />
+          <Property Name="Orig_Status" Type="int" />
+          <Property Name="Exp_Billable_Flag" Type="bit" Nullable="false" />
+          <Property Name="Consolidate_Flag" Type="bit" Nullable="false" />
+          <Property Name="Bill_Complete_Flag" Type="bit" Nullable="false" />
+          <Property Name="SR_SubType_RecID" Type="int" />
+          <Property Name="Date_Entered_UTC" Type="datetime" />
+          <Property Name="Date_Req_UTC" Type="datetime" />
+          <Property Name="Last_Update_UTC" Type="datetime" />
+          <Property Name="Date_Closed_UTC" Type="datetime" />
+          <Property Name="CWN_Last_Full_Sync_UTC" Type="datetime" />
+          <Property Name="Sub_Date_Accepted_UTC" Type="datetime" />
+          <Property Name="Date_Rejected_UTC" Type="datetime" />
+          <Property Name="SR_SubTypeItem_RecID" Type="int" />
+        </EntityType>
+        <EntityType Name="SR_Status">
+          <Key>
+            <PropertyRef Name="SR_Status_RecID" />
+          </Key>
+          <Property Name="Owner_ID" Type="int" />
+          <Property Name="SR_Status_RecID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Owner_Level_RecID" Type="int" />
+          <Property Name="Billing_Unit_RecID" Type="int" />
+          <Property Name="Description" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Default_Flag" Type="bit" Nullable="false" />
+          <Property Name="Sort_Order" Type="smallint" />
+          <Property Name="Board_Flag" Type="bit" Nullable="false" />
+          <Property Name="Closed_Flag" Type="bit" Nullable="false" />
+          <Property Name="No_Time_Flag" Type="bit" Nullable="false" />
+          <Property Name="Last_Update" Type="datetime" />
+          <Property Name="Updated_By" Type="varchar" MaxLength="15" />
+          <Property Name="SR_Notify_Type_ID" Type="char" MaxLength="1" />
+          <Property Name="Member_RecID" Type="int" />
+          <Property Name="Workflow_Step" Type="int" />
+          <Property Name="Resolved_Flag" Type="bit" />
+          <Property Name="NoEscalation_Flag" Type="bit" />
+          <Property Name="Escalation_Level" Type="smallint" />
+          <Property Name="SR_Board_RecID" Type="int" />
+          <Property Name="Customer_Portal_Flag" Type="bit" />
+          <Property Name="SV_SetupHdr_RecID" Type="int" />
+          <Property Name="nsn_status_id" Type="char" MaxLength="1" />
+          <Property Name="Inactive_Flag" Type="bit" />
+          <Property Name="Long_Description" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'cwwebapp_sd.dbo.somethingdigital_vTickets' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="somethingdigital_vTickets">
+          <Key>
+            <PropertyRef Name="ticketid" />
+            <PropertyRef Name="status" />
+          </Key>
+          <Property Name="ticketid" Type="int" Nullable="false" />
+          <Property Name="Employee" Type="varchar" MaxLength="61" />
+          <Property Name="budget" Type="decimal" Scale="2" />
+          <Property Name="actualHours" Type="decimal" Precision="38" Scale="2" />
+          <Property Name="client" Type="varchar" MaxLength="50" />
+          <Property Name="name" Type="varchar" MaxLength="100" />
+          <Property Name="status" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="schedule_type_id" Type="char" MaxLength="1" />
+          <Property Name="scheduleDate" Type="datetime" />
+          <Property Name="Sort_Order" Type="smallint" />
+          <Property Name="employeeId" Type="int" />
+          <Property Name="clientId" Type="int" />
+          <Property Name="statusId" Type="int" />
+          <Property Name="boardId" Type="int" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ConnectwiseModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="ConnectwiseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="SR_Service" EntityType="ConnectwiseModel.SR_Service" />
+          <EntitySet Name="somethingdigital_vTickets" EntityType="ConnectwiseModel.somethingdigital_vTickets" />
+          <EntitySet Name="SR_Status" EntityType="ConnectwiseModel.SR_Status" />
+        </EntityContainer>
+        <EntityType Name="SR_Service">
+          <Key>
+            <PropertyRef Name="SR_Service_RecID" />
+          </Key>
+          <Property Name="Owner_ID" Type="Int32" />
+          <Property Name="SR_Service_RecID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SR_Type_RecID" Type="Int32" />
+          <Property Name="SR_Location_RecID" Type="Int32" />
+          <Property Name="SR_Status_RecID" Type="Int32" />
+          <Property Name="SR_Source_RecID" Type="Int32" />
+          <Property Name="SR_Urgency_RecID" Type="Int32" />
+          <Property Name="Contract_RecID" Type="Int32" />
+          <Property Name="SR_Team_RecID" Type="Int32" />
+          <Property Name="Entered_By" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="Entered_Notify_Flag" Type="Boolean" Nullable="false" />
+          <Property Name="Date_Entered" Type="DateTime" />
+          <Property Name="Date_Req" Type="DateTime" />
+          <Property Name="Company_RecID" Type="Int32" />
+          <Property Name="Contact_RecID" Type="Int32" />
+          <Property Name="Assigned_By_RecID" Type="Int32" />
+          <Property Name="Assigned_Notify_Flag" Type="Boolean" Nullable="false" />
+          <Property Name="Billing_Unit_RecID" Type="Int32" />
+          <Property Name="Red_Flag" Type="Boolean" Nullable="false" />
+          <Property Name="Updated_By" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="Last_Update" Type="DateTime" />
+          <Property Name="Address_Line1" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Address_Line2" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="City" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="State_ID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Zip" Type="String" MaxLength="12" Unicode="false" FixedLength="false" />
+          <Property Name="Contact_Name" Type="String" MaxLength="62" Unicode="false" FixedLength="false" />
+          <Property Name="PhoneNbr" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Extension" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="Owner_Level_RecID" Type="Int32" />
+          <Property Name="Email_Address" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Summary" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Publish_Flag" Type="Boolean" Nullable="false" />
+          <Property Name="Closed_By" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="Date_Closed" Type="DateTime" />
+          <Property Name="DB_Timestamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="Hours_Budget" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Time_Billable_Flag" Type="Boolean" />
+          <Property Name="TimeBillable_Flag" Type="Boolean" />
+          <Property Name="ExpBillable_Flag" Type="Boolean" />
+          <Property Name="Activity_Class_RecID" Type="Int32" />
+          <Property Name="Activity_Type_RecID" Type="Int32" />
+          <Property Name="PO_Number" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="Reference" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="EstRevenue" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="BillComplete_Flag" Type="Boolean" />
+          <Property Name="BillUnapp_Flag" Type="Boolean" />
+          <Property Name="Bill_Method" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="BillSR_Flag" Type="Boolean" />
+          <Property Name="Billing_Amount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Company_Address_RecID" Type="Int32" />
+          <Property Name="TimeInvoice_Flag" Type="Boolean" />
+          <Property Name="ExpInvoice_Flag" Type="Boolean" />
+          <Property Name="ProdInvoice_Flag" Type="Boolean" />
+          <Property Name="ProdBillable_Flag" Type="Boolean" />
+          <Property Name="AGR_Header_RecID" Type="Int32" />
+          <Property Name="Override_Flag" Type="Boolean" />
+          <Property Name="SR_Billing_Method_ID" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="AGR_Amount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="AGR_Month" Type="Int16" />
+          <Property Name="AGR_Year" Type="Int16" />
+          <Property Name="SR_Severity_RecID" Type="Int32" />
+          <Property Name="SR_Impact_RecID" Type="Int32" />
+          <Property Name="SR_Board_RecID" Type="Int32" />
+          <Property Name="Billing_Company_RecID" Type="Int32" />
+          <Property Name="Billing_Address_RecID" Type="Int32" />
+          <Property Name="External_Hours_Worked" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Opportunity_RecID" Type="Int32" />
+          <Property Name="Mobile_Guid" Type="Guid" Nullable="false" />
+          <Property Name="nsn_guid" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="from_cn_flag" Type="Boolean" Nullable="false" />
+          <Property Name="cwn_last_full_sync" Type="DateTime" />
+          <Property Name="Approved_Flag" Type="Boolean" Nullable="false" />
+          <Property Name="External_Xref" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Site_Name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Sub_Date_Accepted" Type="DateTime" />
+          <Property Name="Sub_Company_Name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Sub_Company_RecID" Type="Int32" />
+          <Property Name="Sub_Contact_Name" Type="String" MaxLength="62" Unicode="false" FixedLength="false" />
+          <Property Name="Sub_Contact_RecID" Type="Int32" />
+          <Property Name="Sub_Email_Address" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Sub_PhoneNbr" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Sub_Extension" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="Sub_Billing_Method_ID" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="Sub_Billing_Amount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Sub_Ticket_Nbr" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="Sub_Override_Flag" Type="Boolean" />
+          <Property Name="Rejected_Flag" Type="Boolean" Nullable="false" />
+          <Property Name="Date_Rejected" Type="DateTime" />
+          <Property Name="Cn_Survey_Completed_Flag" Type="Boolean" Nullable="false" />
+          <Property Name="PM_Phase_RecID" Type="Int32" />
+          <Property Name="WBS_Code" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Rec_Type" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="EmailContact_Flag" Type="Boolean" />
+          <Property Name="EmailResource_Flag" Type="Boolean" />
+          <Property Name="EmailCC_Flag" Type="Boolean" />
+          <Property Name="EmailCC" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="CustUpdate_Flag" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="Country_RecID" Type="Int32" />
+          <Property Name="KB_Category_RecID" Type="Int32" />
+          <Property Name="KB_SubCategory_RecID" Type="Int32" />
+          <Property Name="KB_Link_RecID" Type="Int32" />
+          <Property Name="KB_Link_Type" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="SR_SLA_RecID" Type="Int32" />
+          <Property Name="Order_Header_RecID" Type="Int32" />
+          <Property Name="Orig_Status" Type="Int32" />
+          <Property Name="Exp_Billable_Flag" Type="Boolean" Nullable="false" />
+          <Property Name="Consolidate_Flag" Type="Boolean" Nullable="false" />
+          <Property Name="Bill_Complete_Flag" Type="Boolean" Nullable="false" />
+          <Property Name="SR_SubType_RecID" Type="Int32" />
+          <Property Name="Date_Entered_UTC" Type="DateTime" />
+          <Property Name="Date_Req_UTC" Type="DateTime" />
+          <Property Name="Last_Update_UTC" Type="DateTime" />
+          <Property Name="Date_Closed_UTC" Type="DateTime" />
+          <Property Name="CWN_Last_Full_Sync_UTC" Type="DateTime" />
+          <Property Name="Sub_Date_Accepted_UTC" Type="DateTime" />
+          <Property Name="Date_Rejected_UTC" Type="DateTime" />
+          <Property Name="SR_SubTypeItem_RecID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="somethingdigital_vTickets">
+          <Key>
+            <PropertyRef Name="ticketid" />
+            <PropertyRef Name="status" />
+          </Key>
+          <Property Name="ticketid" Type="Int32" Nullable="false" />
+          <Property Name="Employee" Type="String" MaxLength="61" Unicode="false" FixedLength="false" />
+          <Property Name="budget" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="actualHours" Type="Decimal" Precision="38" Scale="2" />
+          <Property Name="client" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="name" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="status" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="schedule_type_id" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="scheduleDate" Type="DateTime" />
+          <Property Name="Sort_Order" Type="Int16" />
+          <Property Name="employeeId" Type="Int32" />
+          <Property Name="clientId" Type="Int32" />
+          <Property Type="Int32" Name="statusId" />
+          <Property Type="Int32" Name="boardId" />
+        </EntityType>
+        <EntityType Name="SR_Status">
+          <Key>
+            <PropertyRef Name="SR_Status_RecID" />
+          </Key>
+          <Property Type="Int32" Name="Owner_ID" />
+          <Property Type="Int32" Name="SR_Status_RecID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Owner_Level_RecID" />
+          <Property Type="Int32" Name="Billing_Unit_RecID" />
+          <Property Type="String" Name="Description" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="Default_Flag" Nullable="false" />
+          <Property Type="Int16" Name="Sort_Order" />
+          <Property Type="Boolean" Name="Board_Flag" Nullable="false" />
+          <Property Type="Boolean" Name="Closed_Flag" Nullable="false" />
+          <Property Type="Boolean" Name="No_Time_Flag" Nullable="false" />
+          <Property Type="DateTime" Name="Last_Update" />
+          <Property Type="String" Name="Updated_By" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SR_Notify_Type_ID" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="Int32" Name="Member_RecID" />
+          <Property Type="Int32" Name="Workflow_Step" />
+          <Property Type="Boolean" Name="Resolved_Flag" />
+          <Property Type="Boolean" Name="NoEscalation_Flag" />
+          <Property Type="Int16" Name="Escalation_Level" />
+          <Property Type="Int32" Name="SR_Board_RecID" />
+          <Property Type="Boolean" Name="Customer_Portal_Flag" />
+          <Property Type="Int32" Name="SV_SetupHdr_RecID" />
+          <Property Type="String" Name="nsn_status_id" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="Boolean" Name="Inactive_Flag" />
+          <Property Type="String" Name="Long_Description" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ConnectwiseModelStoreContainer" CdmEntityContainer="ConnectwiseEntities">
+          <EntitySetMapping Name="SR_Service"><EntityTypeMapping TypeName="ConnectwiseModel.SR_Service"><MappingFragment StoreEntitySet="SR_Service">
+            <ScalarProperty Name="Owner_ID" ColumnName="Owner_ID" />
+            <ScalarProperty Name="SR_Service_RecID" ColumnName="SR_Service_RecID" />
+            <ScalarProperty Name="SR_Type_RecID" ColumnName="SR_Type_RecID" />
+            <ScalarProperty Name="SR_Location_RecID" ColumnName="SR_Location_RecID" />
+            <ScalarProperty Name="SR_Status_RecID" ColumnName="SR_Status_RecID" />
+            <ScalarProperty Name="SR_Source_RecID" ColumnName="SR_Source_RecID" />
+            <ScalarProperty Name="SR_Urgency_RecID" ColumnName="SR_Urgency_RecID" />
+            <ScalarProperty Name="Contract_RecID" ColumnName="Contract_RecID" />
+            <ScalarProperty Name="SR_Team_RecID" ColumnName="SR_Team_RecID" />
+            <ScalarProperty Name="Entered_By" ColumnName="Entered_By" />
+            <ScalarProperty Name="Entered_Notify_Flag" ColumnName="Entered_Notify_Flag" />
+            <ScalarProperty Name="Date_Entered" ColumnName="Date_Entered" />
+            <ScalarProperty Name="Date_Req" ColumnName="Date_Req" />
+            <ScalarProperty Name="Company_RecID" ColumnName="Company_RecID" />
+            <ScalarProperty Name="Contact_RecID" ColumnName="Contact_RecID" />
+            <ScalarProperty Name="Assigned_By_RecID" ColumnName="Assigned_By_RecID" />
+            <ScalarProperty Name="Assigned_Notify_Flag" ColumnName="Assigned_Notify_Flag" />
+            <ScalarProperty Name="Billing_Unit_RecID" ColumnName="Billing_Unit_RecID" />
+            <ScalarProperty Name="Red_Flag" ColumnName="Red_Flag" />
+            <ScalarProperty Name="Updated_By" ColumnName="Updated_By" />
+            <ScalarProperty Name="Last_Update" ColumnName="Last_Update" />
+            <ScalarProperty Name="Address_Line1" ColumnName="Address_Line1" />
+            <ScalarProperty Name="Address_Line2" ColumnName="Address_Line2" />
+            <ScalarProperty Name="City" ColumnName="City" />
+            <ScalarProperty Name="State_ID" ColumnName="State_ID" />
+            <ScalarProperty Name="Zip" ColumnName="Zip" />
+            <ScalarProperty Name="Contact_Name" ColumnName="Contact_Name" />
+            <ScalarProperty Name="PhoneNbr" ColumnName="PhoneNbr" />
+            <ScalarProperty Name="Extension" ColumnName="Extension" />
+            <ScalarProperty Name="Owner_Level_RecID" ColumnName="Owner_Level_RecID" />
+            <ScalarProperty Name="Email_Address" ColumnName="Email_Address" />
+            <ScalarProperty Name="Summary" ColumnName="Summary" />
+            <ScalarProperty Name="Publish_Flag" ColumnName="Publish_Flag" />
+            <ScalarProperty Name="Closed_By" ColumnName="Closed_By" />
+            <ScalarProperty Name="Date_Closed" ColumnName="Date_Closed" />
+            <ScalarProperty Name="DB_Timestamp" ColumnName="DB_Timestamp" />
+            <ScalarProperty Name="Hours_Budget" ColumnName="Hours_Budget" />
+            <ScalarProperty Name="Time_Billable_Flag" ColumnName="Time_Billable_Flag" />
+            <ScalarProperty Name="TimeBillable_Flag" ColumnName="TimeBillable_Flag" />
+            <ScalarProperty Name="ExpBillable_Flag" ColumnName="ExpBillable_Flag" />
+            <ScalarProperty Name="Activity_Class_RecID" ColumnName="Activity_Class_RecID" />
+            <ScalarProperty Name="Activity_Type_RecID" ColumnName="Activity_Type_RecID" />
+            <ScalarProperty Name="PO_Number" ColumnName="PO_Number" />
+            <ScalarProperty Name="Reference" ColumnName="Reference" />
+            <ScalarProperty Name="EstRevenue" ColumnName="EstRevenue" />
+            <ScalarProperty Name="BillComplete_Flag" ColumnName="BillComplete_Flag" />
+            <ScalarProperty Name="BillUnapp_Flag" ColumnName="BillUnapp_Flag" />
+            <ScalarProperty Name="Bill_Method" ColumnName="Bill_Method" />
+            <ScalarProperty Name="BillSR_Flag" ColumnName="BillSR_Flag" />
+            <ScalarProperty Name="Billing_Amount" ColumnName="Billing_Amount" />
+            <ScalarProperty Name="Company_Address_RecID" ColumnName="Company_Address_RecID" />
+            <ScalarProperty Name="TimeInvoice_Flag" ColumnName="TimeInvoice_Flag" />
+            <ScalarProperty Name="ExpInvoice_Flag" ColumnName="ExpInvoice_Flag" />
+            <ScalarProperty Name="ProdInvoice_Flag" ColumnName="ProdInvoice_Flag" />
+            <ScalarProperty Name="ProdBillable_Flag" ColumnName="ProdBillable_Flag" />
+            <ScalarProperty Name="AGR_Header_RecID" ColumnName="AGR_Header_RecID" />
+            <ScalarProperty Name="Override_Flag" ColumnName="Override_Flag" />
+            <ScalarProperty Name="SR_Billing_Method_ID" ColumnName="SR_Billing_Method_ID" />
+            <ScalarProperty Name="AGR_Amount" ColumnName="AGR_Amount" />
+            <ScalarProperty Name="AGR_Month" ColumnName="AGR_Month" />
+            <ScalarProperty Name="AGR_Year" ColumnName="AGR_Year" />
+            <ScalarProperty Name="SR_Severity_RecID" ColumnName="SR_Severity_RecID" />
+            <ScalarProperty Name="SR_Impact_RecID" ColumnName="SR_Impact_RecID" />
+            <ScalarProperty Name="SR_Board_RecID" ColumnName="SR_Board_RecID" />
+            <ScalarProperty Name="Billing_Company_RecID" ColumnName="Billing_Company_RecID" />
+            <ScalarProperty Name="Billing_Address_RecID" ColumnName="Billing_Address_RecID" />
+            <ScalarProperty Name="External_Hours_Worked" ColumnName="External_Hours_Worked" />
+            <ScalarProperty Name="Opportunity_RecID" ColumnName="Opportunity_RecID" />
+            <ScalarProperty Name="Mobile_Guid" ColumnName="Mobile_Guid" />
+            <ScalarProperty Name="nsn_guid" ColumnName="nsn_guid" />
+            <ScalarProperty Name="from_cn_flag" ColumnName="from_cn_flag" />
+            <ScalarProperty Name="cwn_last_full_sync" ColumnName="cwn_last_full_sync" />
+            <ScalarProperty Name="Approved_Flag" ColumnName="Approved_Flag" />
+            <ScalarProperty Name="External_Xref" ColumnName="External_Xref" />
+            <ScalarProperty Name="Site_Name" ColumnName="Site_Name" />
+            <ScalarProperty Name="Sub_Date_Accepted" ColumnName="Sub_Date_Accepted" />
+            <ScalarProperty Name="Sub_Company_Name" ColumnName="Sub_Company_Name" />
+            <ScalarProperty Name="Sub_Company_RecID" ColumnName="Sub_Company_RecID" />
+            <ScalarProperty Name="Sub_Contact_Name" ColumnName="Sub_Contact_Name" />
+            <ScalarProperty Name="Sub_Contact_RecID" ColumnName="Sub_Contact_RecID" />
+            <ScalarProperty Name="Sub_Email_Address" ColumnName="Sub_Email_Address" />
+            <ScalarProperty Name="Sub_PhoneNbr" ColumnName="Sub_PhoneNbr" />
+            <ScalarProperty Name="Sub_Extension" ColumnName="Sub_Extension" />
+            <ScalarProperty Name="Sub_Billing_Method_ID" ColumnName="Sub_Billing_Method_ID" />
+            <ScalarProperty Name="Sub_Billing_Amount" ColumnName="Sub_Billing_Amount" />
+            <ScalarProperty Name="Sub_Ticket_Nbr" ColumnName="Sub_Ticket_Nbr" />
+            <ScalarProperty Name="Sub_Override_Flag" ColumnName="Sub_Override_Flag" />
+            <ScalarProperty Name="Rejected_Flag" ColumnName="Rejected_Flag" />
+            <ScalarProperty Name="Date_Rejected" ColumnName="Date_Rejected" />
+            <ScalarProperty Name="Cn_Survey_Completed_Flag" ColumnName="Cn_Survey_Completed_Flag" />
+            <ScalarProperty Name="PM_Phase_RecID" ColumnName="PM_Phase_RecID" />
+            <ScalarProperty Name="WBS_Code" ColumnName="WBS_Code" />
+            <ScalarProperty Name="Rec_Type" ColumnName="Rec_Type" />
+            <ScalarProperty Name="EmailContact_Flag" ColumnName="EmailContact_Flag" />
+            <ScalarProperty Name="EmailResource_Flag" ColumnName="EmailResource_Flag" />
+            <ScalarProperty Name="EmailCC_Flag" ColumnName="EmailCC_Flag" />
+            <ScalarProperty Name="EmailCC" ColumnName="EmailCC" />
+            <ScalarProperty Name="CustUpdate_Flag" ColumnName="CustUpdate_Flag" />
+            <ScalarProperty Name="Country_RecID" ColumnName="Country_RecID" />
+            <ScalarProperty Name="KB_Category_RecID" ColumnName="KB_Category_RecID" />
+            <ScalarProperty Name="KB_SubCategory_RecID" ColumnName="KB_SubCategory_RecID" />
+            <ScalarProperty Name="KB_Link_RecID" ColumnName="KB_Link_RecID" />
+            <ScalarProperty Name="KB_Link_Type" ColumnName="KB_Link_Type" />
+            <ScalarProperty Name="SR_SLA_RecID" ColumnName="SR_SLA_RecID" />
+            <ScalarProperty Name="Order_Header_RecID" ColumnName="Order_Header_RecID" />
+            <ScalarProperty Name="Orig_Status" ColumnName="Orig_Status" />
+            <ScalarProperty Name="Exp_Billable_Flag" ColumnName="Exp_Billable_Flag" />
+            <ScalarProperty Name="Consolidate_Flag" ColumnName="Consolidate_Flag" />
+            <ScalarProperty Name="Bill_Complete_Flag" ColumnName="Bill_Complete_Flag" />
+            <ScalarProperty Name="SR_SubType_RecID" ColumnName="SR_SubType_RecID" />
+            <ScalarProperty Name="Date_Entered_UTC" ColumnName="Date_Entered_UTC" />
+            <ScalarProperty Name="Date_Req_UTC" ColumnName="Date_Req_UTC" />
+            <ScalarProperty Name="Last_Update_UTC" ColumnName="Last_Update_UTC" />
+            <ScalarProperty Name="Date_Closed_UTC" ColumnName="Date_Closed_UTC" />
+            <ScalarProperty Name="CWN_Last_Full_Sync_UTC" ColumnName="CWN_Last_Full_Sync_UTC" />
+            <ScalarProperty Name="Sub_Date_Accepted_UTC" ColumnName="Sub_Date_Accepted_UTC" />
+            <ScalarProperty Name="Date_Rejected_UTC" ColumnName="Date_Rejected_UTC" />
+            <ScalarProperty Name="SR_SubTypeItem_RecID" ColumnName="SR_SubTypeItem_RecID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="somethingdigital_vTickets"><EntityTypeMapping TypeName="ConnectwiseModel.somethingdigital_vTickets"><MappingFragment StoreEntitySet="somethingdigital_vTickets">
+            <ScalarProperty Name="boardId" ColumnName="boardId" />
+                <ScalarProperty Name="statusId" ColumnName="statusId" />
+                <ScalarProperty Name="ticketid" ColumnName="ticketid" />
+            <ScalarProperty Name="Employee" ColumnName="Employee" />
+            <ScalarProperty Name="budget" ColumnName="budget" />
+            <ScalarProperty Name="actualHours" ColumnName="actualHours" />
+            <ScalarProperty Name="client" ColumnName="client" />
+            <ScalarProperty Name="name" ColumnName="name" />
+            <ScalarProperty Name="status" ColumnName="status" />
+            <ScalarProperty Name="schedule_type_id" ColumnName="schedule_type_id" />
+            <ScalarProperty Name="scheduleDate" ColumnName="scheduleDate" />
+            <ScalarProperty Name="Sort_Order" ColumnName="Sort_Order" />
+            <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+            <ScalarProperty Name="clientId" ColumnName="clientId" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="SR_Status">
+            <EntityTypeMapping TypeName="ConnectwiseModel.SR_Status">
+              <MappingFragment StoreEntitySet="SR_Status">
+                <ScalarProperty Name="Long_Description" ColumnName="Long_Description" />
+                <ScalarProperty Name="Inactive_Flag" ColumnName="Inactive_Flag" />
+                <ScalarProperty Name="nsn_status_id" ColumnName="nsn_status_id" />
+                <ScalarProperty Name="SV_SetupHdr_RecID" ColumnName="SV_SetupHdr_RecID" />
+                <ScalarProperty Name="Customer_Portal_Flag" ColumnName="Customer_Portal_Flag" />
+                <ScalarProperty Name="SR_Board_RecID" ColumnName="SR_Board_RecID" />
+                <ScalarProperty Name="Escalation_Level" ColumnName="Escalation_Level" />
+                <ScalarProperty Name="NoEscalation_Flag" ColumnName="NoEscalation_Flag" />
+                <ScalarProperty Name="Resolved_Flag" ColumnName="Resolved_Flag" />
+                <ScalarProperty Name="Workflow_Step" ColumnName="Workflow_Step" />
+                <ScalarProperty Name="Member_RecID" ColumnName="Member_RecID" />
+                <ScalarProperty Name="SR_Notify_Type_ID" ColumnName="SR_Notify_Type_ID" />
+                <ScalarProperty Name="Updated_By" ColumnName="Updated_By" />
+                <ScalarProperty Name="Last_Update" ColumnName="Last_Update" />
+                <ScalarProperty Name="No_Time_Flag" ColumnName="No_Time_Flag" />
+                <ScalarProperty Name="Closed_Flag" ColumnName="Closed_Flag" />
+                <ScalarProperty Name="Board_Flag" ColumnName="Board_Flag" />
+                <ScalarProperty Name="Sort_Order" ColumnName="Sort_Order" />
+                <ScalarProperty Name="Default_Flag" ColumnName="Default_Flag" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Billing_Unit_RecID" ColumnName="Billing_Unit_RecID" />
+                <ScalarProperty Name="Owner_Level_RecID" ColumnName="Owner_Level_RecID" />
+                <ScalarProperty Name="SR_Status_RecID" ColumnName="SR_Status_RecID" />
+                <ScalarProperty Name="Owner_ID" ColumnName="Owner_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="ConnectwiseModel" ZoomLevel="24">
+        <EntityTypeShape EntityType="ConnectwiseModel.SR_Service" Width="1.5" PointX="0.75" PointY="0.75" Height="20.327902018229167" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConnectwiseModel.somethingdigital_vTickets" Width="1.5" PointX="2.75" PointY="0.75" Height="2.9070849609374996" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConnectwiseModel.SR_Status" Width="1.5" PointX="3.375" PointY="4.75" Height="4.8792529296875" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

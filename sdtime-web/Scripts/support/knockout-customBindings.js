@@ -29,7 +29,7 @@
                         index = valueAccessor().index()+1;
                     }
                     //Remove the item from the old
-                    _dragged.bucket.relinquish(_dragged);
+                    _dragged.bucket().relinquish(_dragged);
                     //Add the item to the new bucket
                     bucket.receive(_dragged, index);
                     

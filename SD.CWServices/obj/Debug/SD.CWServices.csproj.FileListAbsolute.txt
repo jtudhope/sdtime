@@ -1,0 +1,5 @@
+C:\dev\SDTime\SD.CWServices\obj\Debug\ResolveAssemblyReference.cache
+C:\dev\SDTime\SD.CWServices\bin\SD.CWServices.dll
+C:\dev\SDTime\SD.CWServices\bin\SD.CWServices.pdb
+C:\dev\SDTime\SD.CWServices\obj\Debug\SD.CWServices.dll
+C:\dev\SDTime\SD.CWServices\obj\Debug\SD.CWServices.pdb

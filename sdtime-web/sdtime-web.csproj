@@ -129,6 +129,11 @@
     <Compile Include="Models\Support\SupportResponse.cs" />
     <Compile Include="Models\Support\Ticket.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\CWTicketService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Util\Security\ClaimCollectionExtensions.cs" />
     <Compile Include="Util\Security\ClaimsContants.cs" />
     <Compile Include="Util\Security\ClaimsInfo.cs" />
@@ -242,11 +247,37 @@
     <Content Include="Scripts\support\viewModel\viewModelSupport.js" />
     <Content Include="Scripts\underscore.js" />
     <Content Include="Scripts\underscore.min.js" />
+    <None Include="Service References\CWTicketService\sdtime.CWTicketService.Status.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CWTicketService\sdtime.CWTicketService.Ticket.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CWTicketService\TicketService.disco" />
+    <None Include="Service References\CWTicketService\configuration91.svcinfo" />
+    <None Include="Service References\CWTicketService\configuration.svcinfo" />
+    <None Include="Service References\CWTicketService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Util\Security\Model\UserDb.edmx.sql" />
     <EntityDeploy Include="Models\ConnectWise.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ConnectWise.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="Service References\CWTicketService\TicketService.wsdl" />
+    <None Include="Service References\CWTicketService\TicketService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CWTicketService\TicketService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CWTicketService\TicketService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CWTicketService\TicketService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\Members\MemberApi.disco" />
     <None Include="Service References\Members\configuration91.svcinfo" />
     <None Include="Service References\Members\configuration.svcinfo" />
@@ -306,6 +337,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\CWTicketService\" />
     <WCFMetadataStorage Include="Service References\Members\" />
   </ItemGroup>
   <PropertyGroup>

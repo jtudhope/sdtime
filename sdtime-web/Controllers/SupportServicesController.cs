@@ -13,7 +13,13 @@ namespace sdtime.Controllers
         //
         // GET: /SupportServices/
 
-        
+
+        public ActionResult UpdateTicket(Ticket ticket)
+        {
+            CWTicketService.TicketServiceClient client = new CWTicketService.TicketServiceClient();
+            
+            return Json(client.SetTicket(ticket.GetContractObject()));
+        }
 
         public ActionResult ServiceBoard(int? [] members, int? [] clients)
         {
@@ -23,7 +29,7 @@ namespace sdtime.Controllers
             response.clients= new List<Client>();
                  
 
-            
+            /*
             int diff = DateTime.Now.DayOfWeek - DayOfWeek.Monday;
             if (diff < 0) { diff += 7; }
             DateTime startDate = DateTime.Now.AddDays((-1 * diff) -1).Date;
@@ -37,23 +43,30 @@ namespace sdtime.Controllers
             if (clients != null)
                 tickets = tickets.Where(t => clients.Contains(t.clientId));
             tickets = tickets.OrderBy(t => t.Sort_Order);
-            
+            */
+
+            CWTicketService.TicketServiceClient client = new CWTicketService.TicketServiceClient();
+            List<CWTicketService.Ticket> svcTickets = client.GetTicketsForTheWeek(members, clients, 11).ToList();
+            List<CWTicketService.Status> svcStatuss = client.GetStatus(11).ToList();
                 
-            foreach (string status in tickets.Select(t => t.status).Distinct())
+            foreach (CWTicketService.Status svcStatus in svcStatuss)
             {
-                response.buckets.Add(new Bucket { name = status, status = status });
+                response.buckets.Add(new Bucket { name = svcStatus.Title, status = svcStatus.Title, statusId = svcStatus.StatusID, sortOrder = svcStatus.SortOrder });
             }
-            foreach (somethingdigital_vTickets ticket in tickets)
+            foreach (CWTicketService.Ticket svcTicket in svcTickets)
             {
-                Bucket tmp = response.buckets.First(b => b.status == ticket.status);
-                if (tmp.tickets == null)
-                    tmp.tickets = new List<Ticket>();
-                if (!response.members.Any(m => m.memberId == ticket.employeeId))
-                    response.members.Add(new Member { fullName = ticket.Employee, memberId = ticket.employeeId.GetValueOrDefault(0) });
-                if (!response.clients.Any(m => m.clientId == ticket.clientId))
-                    response.clients.Add(new Client { clientId = ticket.clientId.GetValueOrDefault(0), clientName = ticket.client });
-                
-                tmp.tickets.Add(new Ticket { assigned = ticket.Employee, budget = Convert.ToDouble(ticket.budget.GetValueOrDefault(0)), client = ticket.client, description = "", name = ticket.name, number = ticket.ticketid });
+                Bucket tmp = response.buckets.FirstOrDefault(b => b.statusId == svcTicket.StatusID);
+                if (tmp != null)
+                {
+                    if (tmp.tickets == null)
+                        tmp.tickets = new List<Ticket>();
+                    if (!response.members.Any(m => m.memberId == svcTicket.AssignedMemberId))
+                        response.members.Add(new Member { fullName = svcTicket.AssignedMember, memberId = svcTicket.AssignedMemberId });
+                    if (!response.clients.Any(m => m.clientId == svcTicket.ClientID))
+                        response.clients.Add(new Client { clientId = svcTicket.ClientID, clientName = svcTicket.ClientName });
+
+                    tmp.tickets.Add(new Ticket { assigned = svcTicket.AssignedMember, budget = svcTicket.HoursBudget, actual = svcTicket.HoursActual, client = svcTicket.ClientName, description = "", name = svcTicket.Title, number = svcTicket.TicketID, statusId = svcTicket.StatusID });
+                }
             }
 
             return Json(response, JsonRequestBehavior.AllowGet);

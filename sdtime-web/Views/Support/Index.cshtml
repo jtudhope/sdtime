@@ -4,7 +4,7 @@
 }
 
 
-	<script type='text/javascript' src='../../Scripts/support/jquery-1.9.0.js'></script>
+	
 	<script type='text/javascript' src='../../Scripts/support/jquery-ui-1.10.0.custom.min.js'></script>
 	<script type='text/javascript' src='../../Scripts/support/knockout.js'></script>
 	<script type='text/javascript' src='../../Scripts/support/model/modelTicketNote.js'></script>
@@ -46,6 +46,8 @@
 						<h2 data-bind="text: client"></h2>
 						<h3 data-bind="text: name"></h3>
 						<div>Budget:<span type="text" data-bind="text: budget"></span></div>
+                        <div>Actual:<span type="text" data-bind="text: actual"></span></div>
+                        <div>Ticket:<span type="text" data-bind="text: number"></span></div>
                         <div>Assigned:<b><span type="text" data-bind="text: assigned"></span></b></div>
 					</div>
 				</li>

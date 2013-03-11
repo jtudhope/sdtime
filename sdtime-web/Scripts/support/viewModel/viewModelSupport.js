@@ -28,8 +28,12 @@ function SupportViewModel() {
         }
         console.log("/SupportServices/ServiceBoard?" + membersParameter + clientsParameter);
         $.getJSON("/SupportServices/ServiceBoard?" + membersParameter + clientsParameter, function (data) {
+            data.buckets.sort(function (left, right) {
+                return left.sortOrder == right.sortOrder ? 0 : (left.sortOrder < right.sortOrder ? -1 : 1)
+            });
             for (var i = 0; i < data.buckets.length; i++) {
-                buckets.push(new Bucket(data.buckets[i].name, data.buckets[i].status, data.buckets[i].tickets));
+                buckets.push(new Bucket(data.buckets[i].name, data.buckets[i].status, data.buckets[i].statusId, data.buckets[i].tickets));
+                
             }
             if (members().length == 0) {
                 members.push(new Member(-1, "All"));

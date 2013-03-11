@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ConnectwiseModelStoreContainer" CdmEntityContainer="ConnectwiseEntities">
+    <EntitySetMapping Name="SR_Service">
+      <EntityTypeMapping TypeName="ConnectwiseModel.SR_Service">
+        <MappingFragment StoreEntitySet="SR_Service">
+          <ScalarProperty Name="Owner_ID" ColumnName="Owner_ID" />
+          <ScalarProperty Name="SR_Service_RecID" ColumnName="SR_Service_RecID" />
+          <ScalarProperty Name="SR_Type_RecID" ColumnName="SR_Type_RecID" />
+          <ScalarProperty Name="SR_Location_RecID" ColumnName="SR_Location_RecID" />
+          <ScalarProperty Name="SR_Status_RecID" ColumnName="SR_Status_RecID" />
+          <ScalarProperty Name="SR_Source_RecID" ColumnName="SR_Source_RecID" />
+          <ScalarProperty Name="SR_Urgency_RecID" ColumnName="SR_Urgency_RecID" />
+          <ScalarProperty Name="Contract_RecID" ColumnName="Contract_RecID" />
+          <ScalarProperty Name="SR_Team_RecID" ColumnName="SR_Team_RecID" />
+          <ScalarProperty Name="Entered_By" ColumnName="Entered_By" />
+          <ScalarProperty Name="Entered_Notify_Flag" ColumnName="Entered_Notify_Flag" />
+          <ScalarProperty Name="Date_Entered" ColumnName="Date_Entered" />
+          <ScalarProperty Name="Date_Req" ColumnName="Date_Req" />
+          <ScalarProperty Name="Company_RecID" ColumnName="Company_RecID" />
+          <ScalarProperty Name="Contact_RecID" ColumnName="Contact_RecID" />
+          <ScalarProperty Name="Assigned_By_RecID" ColumnName="Assigned_By_RecID" />
+          <ScalarProperty Name="Assigned_Notify_Flag" ColumnName="Assigned_Notify_Flag" />
+          <ScalarProperty Name="Billing_Unit_RecID" ColumnName="Billing_Unit_RecID" />
+          <ScalarProperty Name="Red_Flag" ColumnName="Red_Flag" />
+          <ScalarProperty Name="Updated_By" ColumnName="Updated_By" />
+          <ScalarProperty Name="Last_Update" ColumnName="Last_Update" />
+          <ScalarProperty Name="Address_Line1" ColumnName="Address_Line1" />
+          <ScalarProperty Name="Address_Line2" ColumnName="Address_Line2" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State_ID" ColumnName="State_ID" />
+          <ScalarProperty Name="Zip" ColumnName="Zip" />
+          <ScalarProperty Name="Contact_Name" ColumnName="Contact_Name" />
+          <ScalarProperty Name="PhoneNbr" ColumnName="PhoneNbr" />
+          <ScalarProperty Name="Extension" ColumnName="Extension" />
+          <ScalarProperty Name="Owner_Level_RecID" ColumnName="Owner_Level_RecID" />
+          <ScalarProperty Name="Email_Address" ColumnName="Email_Address" />
+          <ScalarProperty Name="Summary" ColumnName="Summary" />
+          <ScalarProperty Name="Publish_Flag" ColumnName="Publish_Flag" />
+          <ScalarProperty Name="Closed_By" ColumnName="Closed_By" />
+          <ScalarProperty Name="Date_Closed" ColumnName="Date_Closed" />
+          <ScalarProperty Name="DB_Timestamp" ColumnName="DB_Timestamp" />
+          <ScalarProperty Name="Hours_Budget" ColumnName="Hours_Budget" />
+          <ScalarProperty Name="Time_Billable_Flag" ColumnName="Time_Billable_Flag" />
+          <ScalarProperty Name="TimeBillable_Flag" ColumnName="TimeBillable_Flag" />
+          <ScalarProperty Name="ExpBillable_Flag" ColumnName="ExpBillable_Flag" />
+          <ScalarProperty Name="Activity_Class_RecID" ColumnName="Activity_Class_RecID" />
+          <ScalarProperty Name="Activity_Type_RecID" ColumnName="Activity_Type_RecID" />
+          <ScalarProperty Name="PO_Number" ColumnName="PO_Number" />
+          <ScalarProperty Name="Reference" ColumnName="Reference" />
+          <ScalarProperty Name="EstRevenue" ColumnName="EstRevenue" />
+          <ScalarProperty Name="BillComplete_Flag" ColumnName="BillComplete_Flag" />
+          <ScalarProperty Name="BillUnapp_Flag" ColumnName="BillUnapp_Flag" />
+          <ScalarProperty Name="Bill_Method" ColumnName="Bill_Method" />
+          <ScalarProperty Name="BillSR_Flag" ColumnName="BillSR_Flag" />
+          <ScalarProperty Name="Billing_Amount" ColumnName="Billing_Amount" />
+          <ScalarProperty Name="Company_Address_RecID" ColumnName="Company_Address_RecID" />
+          <ScalarProperty Name="TimeInvoice_Flag" ColumnName="TimeInvoice_Flag" />
+          <ScalarProperty Name="ExpInvoice_Flag" ColumnName="ExpInvoice_Flag" />
+          <ScalarProperty Name="ProdInvoice_Flag" ColumnName="ProdInvoice_Flag" />
+          <ScalarProperty Name="ProdBillable_Flag" ColumnName="ProdBillable_Flag" />
+          <ScalarProperty Name="AGR_Header_RecID" ColumnName="AGR_Header_RecID" />
+          <ScalarProperty Name="Override_Flag" ColumnName="Override_Flag" />
+          <ScalarProperty Name="SR_Billing_Method_ID" ColumnName="SR_Billing_Method_ID" />
+          <ScalarProperty Name="AGR_Amount" ColumnName="AGR_Amount" />
+          <ScalarProperty Name="AGR_Month" ColumnName="AGR_Month" />
+          <ScalarProperty Name="AGR_Year" ColumnName="AGR_Year" />
+          <ScalarProperty Name="SR_Severity_RecID" ColumnName="SR_Severity_RecID" />
+          <ScalarProperty Name="SR_Impact_RecID" ColumnName="SR_Impact_RecID" />
+          <ScalarProperty Name="SR_Board_RecID" ColumnName="SR_Board_RecID" />
+          <ScalarProperty Name="Billing_Company_RecID" ColumnName="Billing_Company_RecID" />
+          <ScalarProperty Name="Billing_Address_RecID" ColumnName="Billing_Address_RecID" />
+          <ScalarProperty Name="External_Hours_Worked" ColumnName="External_Hours_Worked" />
+          <ScalarProperty Name="Opportunity_RecID" ColumnName="Opportunity_RecID" />
+          <ScalarProperty Name="Mobile_Guid" ColumnName="Mobile_Guid" />
+          <ScalarProperty Name="nsn_guid" ColumnName="nsn_guid" />
+          <ScalarProperty Name="from_cn_flag" ColumnName="from_cn_flag" />
+          <ScalarProperty Name="cwn_last_full_sync" ColumnName="cwn_last_full_sync" />
+          <ScalarProperty Name="Approved_Flag" ColumnName="Approved_Flag" />
+          <ScalarProperty Name="External_Xref" ColumnName="External_Xref" />
+          <ScalarProperty Name="Site_Name" ColumnName="Site_Name" />
+          <ScalarProperty Name="Sub_Date_Accepted" ColumnName="Sub_Date_Accepted" />
+          <ScalarProperty Name="Sub_Company_Name" ColumnName="Sub_Company_Name" />
+          <ScalarProperty Name="Sub_Company_RecID" ColumnName="Sub_Company_RecID" />
+          <ScalarProperty Name="Sub_Contact_Name" ColumnName="Sub_Contact_Name" />
+          <ScalarProperty Name="Sub_Contact_RecID" ColumnName="Sub_Contact_RecID" />
+          <ScalarProperty Name="Sub_Email_Address" ColumnName="Sub_Email_Address" />
+          <ScalarProperty Name="Sub_PhoneNbr" ColumnName="Sub_PhoneNbr" />
+          <ScalarProperty Name="Sub_Extension" ColumnName="Sub_Extension" />
+          <ScalarProperty Name="Sub_Billing_Method_ID" ColumnName="Sub_Billing_Method_ID" />
+          <ScalarProperty Name="Sub_Billing_Amount" ColumnName="Sub_Billing_Amount" />
+          <ScalarProperty Name="Sub_Ticket_Nbr" ColumnName="Sub_Ticket_Nbr" />
+          <ScalarProperty Name="Sub_Override_Flag" ColumnName="Sub_Override_Flag" />
+          <ScalarProperty Name="Rejected_Flag" ColumnName="Rejected_Flag" />
+          <ScalarProperty Name="Date_Rejected" ColumnName="Date_Rejected" />
+          <ScalarProperty Name="Cn_Survey_Completed_Flag" ColumnName="Cn_Survey_Completed_Flag" />
+          <ScalarProperty Name="PM_Phase_RecID" ColumnName="PM_Phase_RecID" />
+          <ScalarProperty Name="WBS_Code" ColumnName="WBS_Code" />
+          <ScalarProperty Name="Rec_Type" ColumnName="Rec_Type" />
+          <ScalarProperty Name="EmailContact_Flag" ColumnName="EmailContact_Flag" />
+          <ScalarProperty Name="EmailResource_Flag" ColumnName="EmailResource_Flag" />
+          <ScalarProperty Name="EmailCC_Flag" ColumnName="EmailCC_Flag" />
+          <ScalarProperty Name="EmailCC" ColumnName="EmailCC" />
+          <ScalarProperty Name="CustUpdate_Flag" ColumnName="CustUpdate_Flag" />
+          <ScalarProperty Name="Country_RecID" ColumnName="Country_RecID" />
+          <ScalarProperty Name="KB_Category_RecID" ColumnName="KB_Category_RecID" />
+          <ScalarProperty Name="KB_SubCategory_RecID" ColumnName="KB_SubCategory_RecID" />
+          <ScalarProperty Name="KB_Link_RecID" ColumnName="KB_Link_RecID" />
+          <ScalarProperty Name="KB_Link_Type" ColumnName="KB_Link_Type" />
+          <ScalarProperty Name="SR_SLA_RecID" ColumnName="SR_SLA_RecID" />
+          <ScalarProperty Name="Order_Header_RecID" ColumnName="Order_Header_RecID" />
+          <ScalarProperty Name="Orig_Status" ColumnName="Orig_Status" />
+          <ScalarProperty Name="Exp_Billable_Flag" ColumnName="Exp_Billable_Flag" />
+          <ScalarProperty Name="Consolidate_Flag" ColumnName="Consolidate_Flag" />
+          <ScalarProperty Name="Bill_Complete_Flag" ColumnName="Bill_Complete_Flag" />
+          <ScalarProperty Name="SR_SubType_RecID" ColumnName="SR_SubType_RecID" />
+          <ScalarProperty Name="Date_Entered_UTC" ColumnName="Date_Entered_UTC" />
+          <ScalarProperty Name="Date_Req_UTC" ColumnName="Date_Req_UTC" />
+          <ScalarProperty Name="Last_Update_UTC" ColumnName="Last_Update_UTC" />
+          <ScalarProperty Name="Date_Closed_UTC" ColumnName="Date_Closed_UTC" />
+          <ScalarProperty Name="CWN_Last_Full_Sync_UTC" ColumnName="CWN_Last_Full_Sync_UTC" />
+          <ScalarProperty Name="Sub_Date_Accepted_UTC" ColumnName="Sub_Date_Accepted_UTC" />
+          <ScalarProperty Name="Date_Rejected_UTC" ColumnName="Date_Rejected_UTC" />
+          <ScalarProperty Name="SR_SubTypeItem_RecID" ColumnName="SR_SubTypeItem_RecID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="somethingdigital_vTickets">
+      <EntityTypeMapping TypeName="ConnectwiseModel.somethingdigital_vTickets">
+        <MappingFragment StoreEntitySet="somethingdigital_vTickets">
+          <ScalarProperty Name="boardId" ColumnName="boardId" />
+          <ScalarProperty Name="statusId" ColumnName="statusId" />
+          <ScalarProperty Name="ticketid" ColumnName="ticketid" />
+          <ScalarProperty Name="Employee" ColumnName="Employee" />
+          <ScalarProperty Name="budget" ColumnName="budget" />
+          <ScalarProperty Name="actualHours" ColumnName="actualHours" />
+          <ScalarProperty Name="client" ColumnName="client" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="schedule_type_id" ColumnName="schedule_type_id" />
+          <ScalarProperty Name="scheduleDate" ColumnName="scheduleDate" />
+          <ScalarProperty Name="Sort_Order" ColumnName="Sort_Order" />
+          <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+          <ScalarProperty Name="clientId" ColumnName="clientId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SR_Status">
+      <EntityTypeMapping TypeName="ConnectwiseModel.SR_Status">
+        <MappingFragment StoreEntitySet="SR_Status">
+          <ScalarProperty Name="Long_Description" ColumnName="Long_Description" />
+          <ScalarProperty Name="Inactive_Flag" ColumnName="Inactive_Flag" />
+          <ScalarProperty Name="nsn_status_id" ColumnName="nsn_status_id" />
+          <ScalarProperty Name="SV_SetupHdr_RecID" ColumnName="SV_SetupHdr_RecID" />
+          <ScalarProperty Name="Customer_Portal_Flag" ColumnName="Customer_Portal_Flag" />
+          <ScalarProperty Name="SR_Board_RecID" ColumnName="SR_Board_RecID" />
+          <ScalarProperty Name="Escalation_Level" ColumnName="Escalation_Level" />
+          <ScalarProperty Name="NoEscalation_Flag" ColumnName="NoEscalation_Flag" />
+          <ScalarProperty Name="Resolved_Flag" ColumnName="Resolved_Flag" />
+          <ScalarProperty Name="Workflow_Step" ColumnName="Workflow_Step" />
+          <ScalarProperty Name="Member_RecID" ColumnName="Member_RecID" />
+          <ScalarProperty Name="SR_Notify_Type_ID" ColumnName="SR_Notify_Type_ID" />
+          <ScalarProperty Name="Updated_By" ColumnName="Updated_By" />
+          <ScalarProperty Name="Last_Update" ColumnName="Last_Update" />
+          <ScalarProperty Name="No_Time_Flag" ColumnName="No_Time_Flag" />
+          <ScalarProperty Name="Closed_Flag" ColumnName="Closed_Flag" />
+          <ScalarProperty Name="Board_Flag" ColumnName="Board_Flag" />
+          <ScalarProperty Name="Sort_Order" ColumnName="Sort_Order" />
+          <ScalarProperty Name="Default_Flag" ColumnName="Default_Flag" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Billing_Unit_RecID" ColumnName="Billing_Unit_RecID" />
+          <ScalarProperty Name="Owner_Level_RecID" ColumnName="Owner_Level_RecID" />
+          <ScalarProperty Name="SR_Status_RecID" ColumnName="SR_Status_RecID" />
+          <ScalarProperty Name="Owner_ID" ColumnName="Owner_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
