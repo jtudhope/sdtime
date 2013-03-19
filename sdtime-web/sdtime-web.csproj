@@ -140,7 +140,7 @@
     <Compile Include="Util\Security\CW\CWMockAdapter.cs" />
     <Compile Include="Util\Security\CW\ICWAdapter.cs" />
     <Compile Include="Util\Security\CW\CWAdapter.cs" />
-    <Compile Include="Util\Security\Model\UserDb1.Designer.cs">
+    <Compile Include="Util\Security\Model\UserDb.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>UserDb.edmx</DependentUpon>
@@ -316,18 +316,16 @@
     <Content Include="Views\User\ViewProfile.cshtml" />
     <Content Include="Views\Home\Tickets.cshtml" />
     <Content Include="Views\Support\Index.cshtml" />
+    <EntityDeploy Include="Util\Security\Model\UserDb.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>UserDb.Designer.cs</LastGenOutput>
+    </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <EntityDeploy Include="Util\Security\Model\UserDb.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>UserDb1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
