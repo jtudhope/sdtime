@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="SupportModelStoreContainer" CdmEntityContainer="ContainerDb">
+  <EntityContainerMapping StorageEntityContainer="SupportModelStoreContainer" CdmEntityContainer="SupportModelStoreContainerDb">
     <EntitySetMapping Name="UserEmailConfirmations">
       <EntityTypeMapping TypeName="SupportModel.UserEmailConfirmation">
         <MappingFragment StoreEntitySet="UserEmailConfirmations">

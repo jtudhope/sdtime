@@ -29,32 +29,32 @@ namespace sdtime.Util.Security.Model
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    public partial class ContainerDb : ObjectContext
+    public partial class SupportModelStoreContainerDb : ObjectContext
     {
         #region Constructors
     
         /// <summary>
-        /// Initializes a new ContainerDb object using the connection string found in the 'ContainerDb' section of the application configuration file.
+        /// Initializes a new SupportModelStoreContainerDb object using the connection string found in the 'SupportModelStoreContainerDb' section of the application configuration file.
         /// </summary>
-        public ContainerDb() : base("name=ContainerDb", "ContainerDb")
+        public SupportModelStoreContainerDb() : base("name=SupportModelStoreContainerDb", "SupportModelStoreContainerDb")
         {
             this.ContextOptions.LazyLoadingEnabled = true;
             OnContextCreated();
         }
     
         /// <summary>
-        /// Initialize a new ContainerDb object.
+        /// Initialize a new SupportModelStoreContainerDb object.
         /// </summary>
-        public ContainerDb(string connectionString) : base(connectionString, "ContainerDb")
+        public SupportModelStoreContainerDb(string connectionString) : base(connectionString, "SupportModelStoreContainerDb")
         {
             this.ContextOptions.LazyLoadingEnabled = true;
             OnContextCreated();
         }
     
         /// <summary>
-        /// Initialize a new ContainerDb object.
+        /// Initialize a new SupportModelStoreContainerDb object.
         /// </summary>
-        public ContainerDb(EntityConnection connection) : base(connection, "ContainerDb")
+        public SupportModelStoreContainerDb(EntityConnection connection) : base(connection, "SupportModelStoreContainerDb")
         {
             this.ContextOptions.LazyLoadingEnabled = true;
             OnContextCreated();
