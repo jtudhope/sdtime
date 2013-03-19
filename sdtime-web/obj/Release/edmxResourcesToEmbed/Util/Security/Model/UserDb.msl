@@ -1,8 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="UserDbStoreContainer" CdmEntityContainer="UserDbContainer">
+  <EntityContainerMapping StorageEntityContainer="SupportModelStoreContainer" CdmEntityContainer="SupportModelStoreContainerDb">
+    <EntitySetMapping Name="UserEmailConfirmations">
+      <EntityTypeMapping TypeName="SupportModel.UserEmailConfirmation">
+        <MappingFragment StoreEntitySet="UserEmailConfirmations">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SentOn" ColumnName="SentOn" />
+          <ScalarProperty Name="ConfirmedOn" ColumnName="ConfirmedOn" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Users">
-      <EntityTypeMapping TypeName="IsTypeOf(UserDb.User)">
+      <EntityTypeMapping TypeName="SupportModel.User">
         <MappingFragment StoreEntitySet="Users">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
@@ -11,16 +21,6 @@
           <ScalarProperty Name="MemberSince" ColumnName="MemberSince" />
           <ScalarProperty Name="IdentityProviderKey" ColumnName="IdentityProviderKey" />
           <ScalarProperty Name="IdentityProviderName" ColumnName="IdentityProviderName" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="UserEmailConfirmations">
-      <EntityTypeMapping TypeName="IsTypeOf(UserDb.UserEmailConfirmation)">
-        <MappingFragment StoreEntitySet="UserEmailConfirmations">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="SentOn" ColumnName="SentOn" />
-          <ScalarProperty Name="ConfirmedOn" ColumnName="ConfirmedOn" />
-          <ScalarProperty Name="UserId" ColumnName="UserId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

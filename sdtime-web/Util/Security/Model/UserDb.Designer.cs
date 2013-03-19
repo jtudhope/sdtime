@@ -36,7 +36,7 @@ namespace sdtime.Util.Security.Model
         /// <summary>
         /// Initializes a new SupportModelStoreContainerDb object using the connection string found in the 'SupportModelStoreContainerDb' section of the application configuration file.
         /// </summary>
-        public SupportModelStoreContainerDb() : base("name=SupportModelStoreContainer", "SupportModelStoreContainer")
+        public SupportModelStoreContainerDb() : base("name=SupportModelStoreContainerDb", "SupportModelStoreContainerDb")
         {
             this.ContextOptions.LazyLoadingEnabled = true;
             OnContextCreated();

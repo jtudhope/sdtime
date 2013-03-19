@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ConnectWiseModelStoreContainer" CdmEntityContainer="ConnectWiseEntities">
+    <EntitySetMapping Name="somethingdigital_vTickets">
+      <EntityTypeMapping TypeName="ConnectWiseModel.somethingdigital_vTickets">
+        <MappingFragment StoreEntitySet="somethingdigital_vTickets">
+          <ScalarProperty Name="clientId" ColumnName="clientId" />
+          <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+          <ScalarProperty Name="Sort_Order" ColumnName="Sort_Order" />
+          <ScalarProperty Name="ticketid" ColumnName="ticketid" />
+          <ScalarProperty Name="Employee" ColumnName="Employee" />
+          <ScalarProperty Name="budget" ColumnName="budget" />
+          <ScalarProperty Name="actualHours" ColumnName="actualHours" />
+          <ScalarProperty Name="client" ColumnName="client" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="schedule_type_id" ColumnName="schedule_type_id" />
+          <ScalarProperty Name="scheduleDate" ColumnName="scheduleDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
