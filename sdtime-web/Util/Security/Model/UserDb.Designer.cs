@@ -29,32 +29,32 @@ namespace sdtime.Util.Security.Model
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    public partial class SupportEntities : ObjectContext
+    public partial class ContainerDb : ObjectContext
     {
         #region Constructors
     
         /// <summary>
-        /// Initializes a new SupportEntities object using the connection string found in the 'SupportEntities' section of the application configuration file.
+        /// Initializes a new ContainerDb object using the connection string found in the 'ContainerDb' section of the application configuration file.
         /// </summary>
-        public SupportEntities() : base("name=SupportEntities", "SupportEntities")
+        public ContainerDb() : base("name=ContainerDb", "ContainerDb")
         {
             this.ContextOptions.LazyLoadingEnabled = true;
             OnContextCreated();
         }
     
         /// <summary>
-        /// Initialize a new SupportEntities object.
+        /// Initialize a new ContainerDb object.
         /// </summary>
-        public SupportEntities(string connectionString) : base(connectionString, "SupportEntities")
+        public ContainerDb(string connectionString) : base(connectionString, "ContainerDb")
         {
             this.ContextOptions.LazyLoadingEnabled = true;
             OnContextCreated();
         }
     
         /// <summary>
-        /// Initialize a new SupportEntities object.
+        /// Initialize a new ContainerDb object.
         /// </summary>
-        public SupportEntities(EntityConnection connection) : base(connection, "SupportEntities")
+        public ContainerDb(EntityConnection connection) : base(connection, "ContainerDb")
         {
             this.ContextOptions.LazyLoadingEnabled = true;
             OnContextCreated();
