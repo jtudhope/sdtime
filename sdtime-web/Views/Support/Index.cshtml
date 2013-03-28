@@ -4,7 +4,7 @@
 }
 
 <header class="clearfix">
-	<h1><a href="@Url.Action("Index", "Home")"><img src="@Url.Content("~/Content/logo.png)" width="107" height="40" alt="SD Time" /></a></h1>
+	<h1><a href='@Url.Action("Index", "Home")'><img src='@Url.Content("~/Content/logo.png")' width="107" height="40" alt="SD Time" /></a></h1>
 	
 	<div class="filters clearfix">
 		<select id="employee-filter" data-bind="options: members, optionsText: 'fullName', value: selectedMember,  event:{ change: addSelectedEmployee}"></select>
