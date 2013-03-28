@@ -163,6 +163,7 @@
     <Compile Include="Util\Security\OwnerConstants.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\cross.png" />
     <Content Include="Content\header-bg.png" />
     <Content Include="Content\logo.PNG" />
     <Content Include="Content\main.css" />
