@@ -26,7 +26,7 @@ function SupportViewModel() {
         for (var i = 0; i < selectedClients().length; i++) {
             clientsParameter += "clients=" + selectedClients()[i].clientId + "&";
         }
-        console.log("/SupportServices/ServiceBoard?" + membersParameter + clientsParameter);
+        //console.log("/SupportServices/ServiceBoard?" + membersParameter + clientsParameter);
         $.getJSON("/SupportServices/ServiceBoard?" + membersParameter + clientsParameter, function (data) {
             data.buckets.sort(function (left, right) {
                 return left.sortOrder == right.sortOrder ? 0 : (left.sortOrder < right.sortOrder ? -1 : 1)
@@ -36,43 +36,68 @@ function SupportViewModel() {
                 
             }
             if (members().length == 0) {
-                members.push(new Member(-1, "All"));
+                members.push(new Member(-1, "All Staff"));
                 for (var i = 0; i < data.members.length; i++) {
                     members.push(new Member(data.members[i].memberId, data.members[i].fullName));
                 }
             }
             if (clients().length == 0) {
-                clients.push(new Client(-1, "All"));
+                clients.push(new Client(-1, "All Clients"));
                 for (var i = 0; i < data.clients.length; i++) {
                     clients.push(new Client(data.clients[i].clientId, data.clients[i].clientName));
                 }
             }
-        })
-    }
+			
+			// Set container width based on number of items
+			var bucketWidth = 200,
+			bucketMargin = 7;
+			$("#container").width((data.buckets.length * (bucketWidth + bucketMargin)) + bucketMargin);
+        });
 
+    }
+	
+	function showFilterBar() {
+		$(".filter-bar").show();
+		// Adjust container padding for filter bar
+		$("#container").css("padding-top", $("header").outerHeight());
+		
+	}
+	
+	function hideFilterBar() {
+		// If the last item has just been removed from the filter bar
+		if(!$(".filter-bar").children().length) {
+			$(".filter-bar").hide();
+			// Clear inline styles
+			$("#container").css("padding-top", "");
+		}
+	}
 
     addSelectedEmployee = function () {
-        if (selectedMember() && selectedMember().fullName != "All") {
+        if (selectedMember() && selectedMember().fullName != "All Staff") {
             selectedMembers.push(selectedMember());
             loadData();
+			showFilterBar();
         }
     }
 
     removeSelectedEmployee = function (data) {
         selectedMembers.remove(data);
         loadData();
+		hideFilterBar();
     }
 
     addSelectedClient = function () {
-        if (selectedClient() && selectedClient().clientName != "All") {
+        if (selectedClient() && selectedClient().clientName != "All Clients") {
             selectedClients.push(selectedClient());
             loadData();
+			showFilterBar();
         }
     }
 
     removeSelectedClient = function (data) {
         selectedClients.remove(data);
         loadData();
+		hideFilterBar();
     }
 
     loadData();
