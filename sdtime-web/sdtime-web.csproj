@@ -169,6 +169,7 @@
     <Content Include="Content\normalize.css" />
     <Content Include="Content\sdtime.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\style.css" />
     <Content Include="Content\subheader-bg.png" />
     <Content Include="Content\Support.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
