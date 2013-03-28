@@ -19,7 +19,7 @@ var Bucket = function (name, status, statusId, tickets) {
     };
     this.receive = function (ticket, index) {
         ticket.bucket(this);
-        this.tickets.splice(index, 0, ticket);
+        //this.tickets.splice(index, 0, ticket);
     }
     this.relinquish = function (ticket) {
         this.tickets.remove(ticket);
