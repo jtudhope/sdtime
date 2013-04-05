@@ -21,7 +21,7 @@ namespace sdtime.Util.Security
             
             log.WriteLine("User Exists: " + provider + ": " + key);
             var userexists = false;
-            using (var db = new UserDbContainer())
+            using (var db = new SupportModelStoreContainerDb())
             {
                 userexists = db.Users.Any(q => q.IdentityProviderKey == key && q.IdentityProviderName == provider);
                 
@@ -37,7 +37,7 @@ namespace sdtime.Util.Security
             log.WriteLine("UserMgr.ResendConfirmation");
             try
             {
-                using (var db = new UserDbContainer())
+                using (var db = new SupportModelStoreContainerDb())
                 {
                     
                     db.AddToUserEmailConfirmations(new UserEmailConfirmation { User = user });
@@ -59,7 +59,7 @@ namespace sdtime.Util.Security
             if (user == null) return false;
             try
             {
-                using (var db = new UserDbContainer())
+                using (var db = new SupportModelStoreContainerDb())
                 {
                     db.AddToUsers(user);
                     db.AddToUserEmailConfirmations(new UserEmailConfirmation { User = user });
@@ -77,7 +77,7 @@ namespace sdtime.Util.Security
 
         public User GetUserByKey(string provider, string key)
         {
-            using (var db = new UserDbContainer())
+            using (var db = new SupportModelStoreContainerDb())
             {
                 var user = db.Users.FirstOrDefault(q => q.IdentityProviderKey == key && q.IdentityProviderName == provider);
                 return user;

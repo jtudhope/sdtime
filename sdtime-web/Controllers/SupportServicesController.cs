@@ -18,6 +18,7 @@ namespace sdtime.Controllers
         {
             CWTicketService.TicketServiceClient client = new CWTicketService.TicketServiceClient();
             
+            
             return Json(client.SetTicket(ticket.GetContractObject()));
         }
 

@@ -3,59 +3,43 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
+<header class="clearfix">
+	<h1><a href='@Url.Action("Index", "Home")'><img src='@Url.Content("~/Content/logo.png")' width="107" height="40" alt="SD Time" /></a></h1>
 	
-	<script type='text/javascript' src='../../Scripts/support/jquery-ui-1.10.0.custom.min.js'></script>
-	<script type='text/javascript' src='../../Scripts/support/knockout.js'></script>
-	<script type='text/javascript' src='../../Scripts/support/model/modelTicketNote.js'></script>
-	<script type='text/javascript' src='../../Scripts/support/model/modelTicket.js'></script>
-	<script type='text/javascript' src='../../Scripts/support/model/modelBucket.js'></script>
-    <script type='text/javascript' src='../../Scripts/support/model/modelMember.js'></script>
-    <script type='text/javascript' src='../../Scripts/support/model/modelClient.js'></script>
-	<script type='text/javascript' src='../../Scripts/support/knockout-customBindings.js'></script>
-
-<div class="employee-filter">
-    <select id="employee-filter" data-bind="options: members, optionsText: 'fullName', value: selectedMember,  event:{ change: addSelectedEmployee}"></select>
-    <div class="filter-selected" data-bind="foreach: selectedMembers">
-        <div class="filterItem">
-            <div data-bind="text: fullName, event : { click : removeSelectedEmployee }" />
-        </div>
-    </div>
-</div>
-
-
-<div class="client-filter">
-    <select id="client-filter" data-bind="options: clients, optionsText: 'clientName', value: selectedClient,  event:{ change: addSelectedClient}"></select>
-    <div class="filter-selected" data-bind="foreach: selectedClients">
-        <div class="filterItem">
-            <div data-bind="text: clientName, event : { click : removeSelectedClient }" />
-        </div>
-    </div>
-</div>
-
-
-<div data-bind="foreach: buckets" id="container">
-		<div class="bucket">
-			<h1 data-bind="text: name"></h1>
-			<ul>
-				<li class="drop-placeholder" data-bind="drop: {params: $data, index: 0}"></li>
-				<!-- ko foreach: tickets -->
-				
-			    <li data-bind="drag: {value: $data}">
-					<div class="ticket">
-						<h2 data-bind="text: client"></h2>
-						<h3 data-bind="text: name"></h3>
-						<div>Budget:<span type="text" data-bind="text: budget"></span></div>
-                        <div>Actual:<span type="text" data-bind="text: actual"></span></div>
-                        <div>Ticket:<span type="text" data-bind="text: number"></span></div>
-                        <div>Assigned:<b><span type="text" data-bind="text: assigned"></span></b></div>
-					</div>
-				</li>
-				<li class="drop-placeholder" data-bind="drop: {params: $parent, index: $index}"></li>
-			    <!-- /ko -->
-				
-			</ul>
-		</div>		   
-	</div>
+	<div class="filters clearfix">
+		<select id="employee-filter" data-bind="options: members, optionsText: 'fullName', value: selectedMember,  event:{ change: addSelectedEmployee}"></select>
+		<select id="client-filter" data-bind="options: clients, optionsText: 'clientName', value: selectedClient,  event:{ change: addSelectedClient}"></select>
+	</div><!-- filters -->
 	
-    <script type='text/javascript' src='../../Scripts/support/viewModel/viewModelSupport.js'></script>
+	<p class="user-info">Logged in as <strong><a href="@Url.Action("ViewProfile", "User")">@ViewBag.Username</a></strong></p>
+	
+	<div class="filter-bar clearfix">
+		<!-- ko foreach: selectedMembers -->
+			<a class="filter-item" data-bind="text: fullName, event : { click : removeSelectedEmployee }" title="Remove this filter"></a>
+		<!-- /ko -->
+		<!-- ko foreach: selectedClients -->
+			<a class="filter-item" data-bind="text: clientName, event : { click : removeSelectedClient }" title="Remove this filter"></a>			
+		<!-- /ko -->
+	</div><!-- filter-bar -->
+	
+	<div class="errordiv"></div>
+
+</header>
+
+<section data-bind="foreach: buckets" id="container" class="clearfix">
+	<div class="bucket">
+		<h1 data-bind="text: name"></h1>
+		<ul data-bind="sortable: {value: $data, params: $parent, index: $index}">
+			<!-- ko foreach: tickets -->
+			<li class="ticket clearfix" data-bind="attr : {'id': number}">
+				<h2 data-bind="text: client"></h2>
+				<h3 data-bind="text: name"></h3>
+				<div class="left-col"><h4>Assigned</h4> <span type="text" data-bind="text: assigned"></span></div>
+				<div class="right-col"><h4>Budget</h4> <span type="text" data-bind="text: budget"></span></div>
+				<div class="left-col new-row"><h4>Ticket</h4> <span type="text" data-bind="text: number"></span></div>
+				<div class="right-col"><h4>Actual</h4> <span type="text" data-bind="text: actual"></span></div>
+			</li>
+		<!-- /ko -->
+		</ul>
+	</div><!-- bucket -->	   
+</section>
