@@ -15,7 +15,20 @@ namespace sdtime.Controllers
 
         public ActionResult Index()
         {
-            
+
+            var mgr = new UserManager();
+            var id = User.Identity as ClaimsIdentity;
+            if (id != null)
+            {
+                var claims = id.Claims;
+                var data = claims.GetClaimsInfo();
+                if (!mgr.UserExists(data.IdentityProviderName, data.ProviderKey))
+                    return RedirectToAction("Index", "RegisterUser");
+                var user = mgr.GetUserByKey(data.IdentityProviderName, data.ProviderKey);
+                ViewBag.Username = user.DisplayName;
+                ViewBag.ProviderName = user.IdentityProviderName;
+                ViewBag.MemberSince = user.MemberSince.GetValueOrDefault().ToString("mm/dd/yy");
+            }
             return View();
         }
 

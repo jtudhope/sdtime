@@ -8,15 +8,15 @@
 //------------------------------------------------------------------------------
 
 using System;
+using System.ComponentModel;
+using System.Data.EntityClient;
 using System.Data.Objects;
 using System.Data.Objects.DataClasses;
-using System.Data.EntityClient;
-using System.ComponentModel;
-using System.Xml.Serialization;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Xml.Serialization;
 
 [assembly: EdmSchemaAttribute()]
-
 namespace SD.CWServices.Model
 {
     #region Contexts
@@ -114,6 +114,7 @@ namespace SD.CWServices.Model
         private ObjectSet<SR_Status> _SR_Status;
 
         #endregion
+
         #region AddTo Methods
     
         /// <summary>
@@ -141,11 +142,11 @@ namespace SD.CWServices.Model
         }
 
         #endregion
+
     }
-    
 
     #endregion
-    
+
     #region Entities
     
     /// <summary>
@@ -172,6 +173,7 @@ namespace SD.CWServices.Model
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -517,6 +519,7 @@ namespace SD.CWServices.Model
         partial void OnboardIdChanged();
 
         #endregion
+
     
     }
     
@@ -568,6 +571,7 @@ namespace SD.CWServices.Model
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -3406,6 +3410,7 @@ namespace SD.CWServices.Model
         partial void OnSR_SubTypeItem_RecIDChanged();
 
         #endregion
+
     
     }
     
@@ -3441,6 +3446,7 @@ namespace SD.CWServices.Model
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -4023,9 +4029,11 @@ namespace SD.CWServices.Model
         partial void OnLong_DescriptionChanged();
 
         #endregion
+
     
     }
 
     #endregion
+
     
 }
