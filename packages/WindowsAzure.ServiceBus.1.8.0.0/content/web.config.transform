@@ -1,24 +1,6 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0"?>
 <configuration>
-  <system.web>
-    <compilation debug="true" targetFramework="4.0">
-      <assemblies>
-        <add assembly="System.Data.Entity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-      </assemblies>
-    </compilation>
-  </system.web>
   <system.serviceModel>
-    <behaviors>
-      <serviceBehaviors>
-        <behavior>
-          <!-- To avoid disclosing metadata information, set the value below to false and remove the metadata endpoint above before deployment -->
-          <serviceMetadata httpGetEnabled="true" />
-          <!-- To receive exception details in faults for debugging purposes, set the value below to true.  Set to false before deployment to avoid disclosing exception information -->
-          <serviceDebug includeExceptionDetailInFaults="false" />
-        </behavior>
-      </serviceBehaviors>
-    </behaviors>
-    <serviceHostingEnvironment multipleSiteBindingsEnabled="true" />
     <extensions>
       <!-- In this extension section we are introducing all known service bus extensions. User can remove the ones they don't need. -->
       <behaviorExtensions>
@@ -44,14 +26,8 @@
       </bindingExtensions>
     </extensions>
   </system.serviceModel>
-  <system.webServer>
-    <modules runAllManagedModulesForAllRequests="true" />
-  </system.webServer>
-  <connectionStrings>
-    <add name="ConnectwiseEntities" connectionString="metadata=res://*/Model.ConnectwiseModel.csdl|res://*/Model.ConnectwiseModel.ssdl|res://*/Model.ConnectwiseModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=10.10.10.204;initial catalog=cwwebapp_sd;persist security info=True;user id=sdreadonly;password=sdreadonly;multipleactiveresultsets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />
-  </connectionStrings>
   <appSettings>
     <!-- Service Bus specific app setings for messaging connections -->
-    <add key="Microsoft.ServiceBus.ConnectionString" value="Endpoint=sb://[your namespace].servicebus.windows.net;SharedSecretIssuer=owner;SharedSecretValue=[your secret]" />
+    <add key="Microsoft.ServiceBus.ConnectionString" value="Endpoint=sb://[your namespace].servicebus.windows.net;SharedSecretIssuer=owner;SharedSecretValue=[your secret]"/>
   </appSettings>
 </configuration>

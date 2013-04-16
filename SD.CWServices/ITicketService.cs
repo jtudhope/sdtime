@@ -13,6 +13,8 @@ namespace SD.CWServices
     [ServiceContract]
     public interface ITicketService
     {
+        [OperationContract]
+        IEnumerable<Ticket> GetTicketsForAllTime(int?[] members, int?[] clients, int serviceBoard);
 
         [OperationContract]
         IEnumerable<Ticket> GetTicketsForTheWeek(int?[] members, int?[] clients, int serviceBoard);
