@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ConnectwiseModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="ConnectwiseEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="SR_Service" EntityType="ConnectwiseModel.SR_Service" />
+    <EntitySet Name="somethingdigital_vTickets" EntityType="ConnectwiseModel.somethingdigital_vTickets" />
+    <EntitySet Name="SR_Status" EntityType="ConnectwiseModel.SR_Status" />
+  </EntityContainer>
+  <EntityType Name="SR_Service">
+    <Key>
+      <PropertyRef Name="SR_Service_RecID" />
+    </Key>
+    <Property Name="Owner_ID" Type="Int32" />
+    <Property Name="SR_Service_RecID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SR_Type_RecID" Type="Int32" />
+    <Property Name="SR_Location_RecID" Type="Int32" />
+    <Property Name="SR_Status_RecID" Type="Int32" />
+    <Property Name="SR_Source_RecID" Type="Int32" />
+    <Property Name="SR_Urgency_RecID" Type="Int32" />
+    <Property Name="Contract_RecID" Type="Int32" />
+    <Property Name="SR_Team_RecID" Type="Int32" />
+    <Property Name="Entered_By" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="Entered_Notify_Flag" Type="Boolean" Nullable="false" />
+    <Property Name="Date_Entered" Type="DateTime" />
+    <Property Name="Date_Req" Type="DateTime" />
+    <Property Name="Company_RecID" Type="Int32" />
+    <Property Name="Contact_RecID" Type="Int32" />
+    <Property Name="Assigned_By_RecID" Type="Int32" />
+    <Property Name="Assigned_Notify_Flag" Type="Boolean" Nullable="false" />
+    <Property Name="Billing_Unit_RecID" Type="Int32" />
+    <Property Name="Red_Flag" Type="Boolean" Nullable="false" />
+    <Property Name="Updated_By" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="Last_Update" Type="DateTime" />
+    <Property Name="Address_Line1" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Address_Line2" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="City" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="State_ID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Zip" Type="String" MaxLength="12" Unicode="false" FixedLength="false" />
+    <Property Name="Contact_Name" Type="String" MaxLength="62" Unicode="false" FixedLength="false" />
+    <Property Name="PhoneNbr" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Extension" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="Owner_Level_RecID" Type="Int32" />
+    <Property Name="Email_Address" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Summary" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Publish_Flag" Type="Boolean" Nullable="false" />
+    <Property Name="Closed_By" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="Date_Closed" Type="DateTime" />
+    <Property Name="DB_Timestamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Hours_Budget" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Time_Billable_Flag" Type="Boolean" />
+    <Property Name="TimeBillable_Flag" Type="Boolean" />
+    <Property Name="ExpBillable_Flag" Type="Boolean" />
+    <Property Name="Activity_Class_RecID" Type="Int32" />
+    <Property Name="Activity_Type_RecID" Type="Int32" />
+    <Property Name="PO_Number" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="Reference" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="EstRevenue" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="BillComplete_Flag" Type="Boolean" />
+    <Property Name="BillUnapp_Flag" Type="Boolean" />
+    <Property Name="Bill_Method" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="BillSR_Flag" Type="Boolean" />
+    <Property Name="Billing_Amount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Company_Address_RecID" Type="Int32" />
+    <Property Name="TimeInvoice_Flag" Type="Boolean" />
+    <Property Name="ExpInvoice_Flag" Type="Boolean" />
+    <Property Name="ProdInvoice_Flag" Type="Boolean" />
+    <Property Name="ProdBillable_Flag" Type="Boolean" />
+    <Property Name="AGR_Header_RecID" Type="Int32" />
+    <Property Name="Override_Flag" Type="Boolean" />
+    <Property Name="SR_Billing_Method_ID" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="AGR_Amount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AGR_Month" Type="Int16" />
+    <Property Name="AGR_Year" Type="Int16" />
+    <Property Name="SR_Severity_RecID" Type="Int32" />
+    <Property Name="SR_Impact_RecID" Type="Int32" />
+    <Property Name="SR_Board_RecID" Type="Int32" />
+    <Property Name="Billing_Company_RecID" Type="Int32" />
+    <Property Name="Billing_Address_RecID" Type="Int32" />
+    <Property Name="External_Hours_Worked" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Opportunity_RecID" Type="Int32" />
+    <Property Name="Mobile_Guid" Type="Guid" Nullable="false" />
+    <Property Name="nsn_guid" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="from_cn_flag" Type="Boolean" Nullable="false" />
+    <Property Name="cwn_last_full_sync" Type="DateTime" />
+    <Property Name="Approved_Flag" Type="Boolean" Nullable="false" />
+    <Property Name="External_Xref" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Site_Name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Sub_Date_Accepted" Type="DateTime" />
+    <Property Name="Sub_Company_Name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Sub_Company_RecID" Type="Int32" />
+    <Property Name="Sub_Contact_Name" Type="String" MaxLength="62" Unicode="false" FixedLength="false" />
+    <Property Name="Sub_Contact_RecID" Type="Int32" />
+    <Property Name="Sub_Email_Address" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Sub_PhoneNbr" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Sub_Extension" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="Sub_Billing_Method_ID" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="Sub_Billing_Amount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Sub_Ticket_Nbr" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="Sub_Override_Flag" Type="Boolean" />
+    <Property Name="Rejected_Flag" Type="Boolean" Nullable="false" />
+    <Property Name="Date_Rejected" Type="DateTime" />
+    <Property Name="Cn_Survey_Completed_Flag" Type="Boolean" Nullable="false" />
+    <Property Name="PM_Phase_RecID" Type="Int32" />
+    <Property Name="WBS_Code" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Rec_Type" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="EmailContact_Flag" Type="Boolean" />
+    <Property Name="EmailResource_Flag" Type="Boolean" />
+    <Property Name="EmailCC_Flag" Type="Boolean" />
+    <Property Name="EmailCC" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+    <Property Name="CustUpdate_Flag" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="Country_RecID" Type="Int32" />
+    <Property Name="KB_Category_RecID" Type="Int32" />
+    <Property Name="KB_SubCategory_RecID" Type="Int32" />
+    <Property Name="KB_Link_RecID" Type="Int32" />
+    <Property Name="KB_Link_Type" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="SR_SLA_RecID" Type="Int32" />
+    <Property Name="Order_Header_RecID" Type="Int32" />
+    <Property Name="Orig_Status" Type="Int32" />
+    <Property Name="Exp_Billable_Flag" Type="Boolean" Nullable="false" />
+    <Property Name="Consolidate_Flag" Type="Boolean" Nullable="false" />
+    <Property Name="Bill_Complete_Flag" Type="Boolean" Nullable="false" />
+    <Property Name="SR_SubType_RecID" Type="Int32" />
+    <Property Name="Date_Entered_UTC" Type="DateTime" />
+    <Property Name="Date_Req_UTC" Type="DateTime" />
+    <Property Name="Last_Update_UTC" Type="DateTime" />
+    <Property Name="Date_Closed_UTC" Type="DateTime" />
+    <Property Name="CWN_Last_Full_Sync_UTC" Type="DateTime" />
+    <Property Name="Sub_Date_Accepted_UTC" Type="DateTime" />
+    <Property Name="Date_Rejected_UTC" Type="DateTime" />
+    <Property Name="SR_SubTypeItem_RecID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="somethingdigital_vTickets">
+    <Key>
+      <PropertyRef Name="ticketid" />
+      <PropertyRef Name="status" />
+    </Key>
+    <Property Name="ticketid" Type="Int32" Nullable="false" />
+    <Property Name="Employee" Type="String" MaxLength="61" Unicode="false" FixedLength="false" />
+    <Property Name="budget" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="actualHours" Type="Decimal" Precision="38" Scale="2" />
+    <Property Name="client" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="name" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="status" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="schedule_type_id" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="scheduleDate" Type="DateTime" />
+    <Property Name="Sort_Order" Type="Int16" />
+    <Property Name="employeeId" Type="Int32" />
+    <Property Name="clientId" Type="Int32" />
+    <Property Type="Int32" Name="statusId" />
+    <Property Type="Int32" Name="boardId" />
+  </EntityType>
+  <EntityType Name="SR_Status">
+    <Key>
+      <PropertyRef Name="SR_Status_RecID" />
+    </Key>
+    <Property Type="Int32" Name="Owner_ID" />
+    <Property Type="Int32" Name="SR_Status_RecID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="Owner_Level_RecID" />
+    <Property Type="Int32" Name="Billing_Unit_RecID" />
+    <Property Type="String" Name="Description" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="Default_Flag" Nullable="false" />
+    <Property Type="Int16" Name="Sort_Order" />
+    <Property Type="Boolean" Name="Board_Flag" Nullable="false" />
+    <Property Type="Boolean" Name="Closed_Flag" Nullable="false" />
+    <Property Type="Boolean" Name="No_Time_Flag" Nullable="false" />
+    <Property Type="DateTime" Name="Last_Update" />
+    <Property Type="String" Name="Updated_By" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="SR_Notify_Type_ID" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="Int32" Name="Member_RecID" />
+    <Property Type="Int32" Name="Workflow_Step" />
+    <Property Type="Boolean" Name="Resolved_Flag" />
+    <Property Type="Boolean" Name="NoEscalation_Flag" />
+    <Property Type="Int16" Name="Escalation_Level" />
+    <Property Type="Int32" Name="SR_Board_RecID" />
+    <Property Type="Boolean" Name="Customer_Portal_Flag" />
+    <Property Type="Int32" Name="SV_SetupHdr_RecID" />
+    <Property Type="String" Name="nsn_status_id" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="Boolean" Name="Inactive_Flag" />
+    <Property Type="String" Name="Long_Description" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

@@ -38,6 +38,30 @@ namespace SD.CWServices
             return returnTickets;
         }
 
+        public IEnumerable<Ticket> GetTicketsForAllTime(int?[] members, int?[] clients, int serviceBoard)
+        {
+            List<Ticket> returnTickets = new List<Ticket>();
+            ConnectwiseEntities entities = new ConnectwiseEntities();
+
+            int diff = DateTime.Now.DayOfWeek - DayOfWeek.Monday;
+            if (diff < 0) { diff += 7; }
+            DateTime startDate = DateTime.Now.AddDays((-1 * diff) - 1).Date;
+            DateTime endDate = startDate.AddDays(7);
+
+            var tickets = entities.somethingdigital_vTickets.Where(t => t.boardId == serviceBoard);
+            if (members != null)
+                tickets = tickets.Where(t => members.Contains(t.employeeId));
+            if (clients != null)
+                tickets = tickets.Where(t => clients.Contains(t.clientId));
+
+            tickets = tickets.OrderBy(t => t.Sort_Order);
+
+            foreach (somethingdigital_vTickets ticket in tickets)
+                returnTickets.Add(Ticket.CreateTicket(ticket));
+
+            return returnTickets;
+        }
+
         public bool SetTicket(Model.Tickets.Ticket ticket)
         {
             ConnectwiseEntities entities = new ConnectwiseEntities();
