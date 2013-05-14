@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ConnectwiseModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="ConnectwiseModelStoreContainer">
+    <EntitySet Name="SR_Service" EntityType="ConnectwiseModel.Store.SR_Service" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SR_Status" EntityType="ConnectwiseModel.Store.SR_Status" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="somethingdigital_vTickets" EntityType="ConnectwiseModel.Store.somethingdigital_vTickets" store:Type="Views" store:Schema="dbo" store:Name="somethingdigital_vTickets">
+      <DefiningQuery>SELECT 
+      [somethingdigital_vTickets].[ticketid] AS [ticketid], 
+      [somethingdigital_vTickets].[Employee] AS [Employee], 
+      [somethingdigital_vTickets].[budget] AS [budget], 
+      [somethingdigital_vTickets].[actualHours] AS [actualHours], 
+      [somethingdigital_vTickets].[client] AS [client], 
+      [somethingdigital_vTickets].[name] AS [name], 
+      [somethingdigital_vTickets].[status] AS [status], 
+      [somethingdigital_vTickets].[schedule_type_id] AS [schedule_type_id], 
+      [somethingdigital_vTickets].[scheduleDate] AS [scheduleDate], 
+      [somethingdigital_vTickets].[Sort_Order] AS [Sort_Order], 
+      [somethingdigital_vTickets].[employeeId] AS [employeeId], 
+      [somethingdigital_vTickets].[clientId] AS [clientId], 
+      [somethingdigital_vTickets].[statusId] AS [statusId], 
+      [somethingdigital_vTickets].[boardId] AS [boardId]
+      FROM [dbo].[somethingdigital_vTickets] AS [somethingdigital_vTickets]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+  <EntityType Name="SR_Service">
+    <Key>
+      <PropertyRef Name="SR_Service_RecID" />
+    </Key>
+    <Property Name="Owner_ID" Type="int" />
+    <Property Name="SR_Service_RecID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SR_Type_RecID" Type="int" />
+    <Property Name="SR_Location_RecID" Type="int" />
+    <Property Name="SR_Status_RecID" Type="int" />
+    <Property Name="SR_Source_RecID" Type="int" />
+    <Property Name="SR_Urgency_RecID" Type="int" />
+    <Property Name="Contract_RecID" Type="int" />
+    <Property Name="SR_Team_RecID" Type="int" />
+    <Property Name="Entered_By" Type="varchar" MaxLength="15" />
+    <Property Name="Entered_Notify_Flag" Type="bit" Nullable="false" />
+    <Property Name="Date_Entered" Type="datetime" />
+    <Property Name="Date_Req" Type="datetime" />
+    <Property Name="Company_RecID" Type="int" />
+    <Property Name="Contact_RecID" Type="int" />
+    <Property Name="Assigned_By_RecID" Type="int" />
+    <Property Name="Assigned_Notify_Flag" Type="bit" Nullable="false" />
+    <Property Name="Billing_Unit_RecID" Type="int" />
+    <Property Name="Red_Flag" Type="bit" Nullable="false" />
+    <Property Name="Updated_By" Type="varchar" MaxLength="15" />
+    <Property Name="Last_Update" Type="datetime" />
+    <Property Name="Address_Line1" Type="varchar" MaxLength="50" />
+    <Property Name="Address_Line2" Type="varchar" MaxLength="50" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="State_ID" Type="varchar" MaxLength="50" />
+    <Property Name="Zip" Type="varchar" MaxLength="12" />
+    <Property Name="Contact_Name" Type="varchar" MaxLength="62" />
+    <Property Name="PhoneNbr" Type="varchar" MaxLength="20" />
+    <Property Name="Extension" Type="varchar" MaxLength="15" />
+    <Property Name="Owner_Level_RecID" Type="int" />
+    <Property Name="Email_Address" Type="varchar" MaxLength="50" />
+    <Property Name="Summary" Type="varchar" MaxLength="100" />
+    <Property Name="Publish_Flag" Type="bit" Nullable="false" />
+    <Property Name="Closed_By" Type="varchar" MaxLength="15" />
+    <Property Name="Date_Closed" Type="datetime" />
+    <Property Name="DB_Timestamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="Hours_Budget" Type="decimal" Scale="2" />
+    <Property Name="Time_Billable_Flag" Type="bit" />
+    <Property Name="TimeBillable_Flag" Type="bit" />
+    <Property Name="ExpBillable_Flag" Type="bit" />
+    <Property Name="Activity_Class_RecID" Type="int" />
+    <Property Name="Activity_Type_RecID" Type="int" />
+    <Property Name="PO_Number" Type="varchar" MaxLength="25" />
+    <Property Name="Reference" Type="varchar" MaxLength="50" />
+    <Property Name="EstRevenue" Type="decimal" Scale="2" />
+    <Property Name="BillComplete_Flag" Type="bit" />
+    <Property Name="BillUnapp_Flag" Type="bit" />
+    <Property Name="Bill_Method" Type="char" MaxLength="1" />
+    <Property Name="BillSR_Flag" Type="bit" />
+    <Property Name="Billing_Amount" Type="decimal" Scale="2" />
+    <Property Name="Company_Address_RecID" Type="int" />
+    <Property Name="TimeInvoice_Flag" Type="bit" />
+    <Property Name="ExpInvoice_Flag" Type="bit" />
+    <Property Name="ProdInvoice_Flag" Type="bit" />
+    <Property Name="ProdBillable_Flag" Type="bit" />
+    <Property Name="AGR_Header_RecID" Type="int" />
+    <Property Name="Override_Flag" Type="bit" />
+    <Property Name="SR_Billing_Method_ID" Type="char" MaxLength="1" />
+    <Property Name="AGR_Amount" Type="decimal" Scale="2" />
+    <Property Name="AGR_Month" Type="smallint" />
+    <Property Name="AGR_Year" Type="smallint" />
+    <Property Name="SR_Severity_RecID" Type="int" />
+    <Property Name="SR_Impact_RecID" Type="int" />
+    <Property Name="SR_Board_RecID" Type="int" />
+    <Property Name="Billing_Company_RecID" Type="int" />
+    <Property Name="Billing_Address_RecID" Type="int" />
+    <Property Name="External_Hours_Worked" Type="decimal" />
+    <Property Name="Opportunity_RecID" Type="int" />
+    <Property Name="Mobile_Guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="nsn_guid" Type="varchar" MaxLength="50" />
+    <Property Name="from_cn_flag" Type="bit" Nullable="false" />
+    <Property Name="cwn_last_full_sync" Type="datetime" />
+    <Property Name="Approved_Flag" Type="bit" Nullable="false" />
+    <Property Name="External_Xref" Type="varchar" MaxLength="100" />
+    <Property Name="Site_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Sub_Date_Accepted" Type="datetime" />
+    <Property Name="Sub_Company_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Sub_Company_RecID" Type="int" />
+    <Property Name="Sub_Contact_Name" Type="varchar" MaxLength="62" />
+    <Property Name="Sub_Contact_RecID" Type="int" />
+    <Property Name="Sub_Email_Address" Type="varchar" MaxLength="50" />
+    <Property Name="Sub_PhoneNbr" Type="varchar" MaxLength="20" />
+    <Property Name="Sub_Extension" Type="varchar" MaxLength="15" />
+    <Property Name="Sub_Billing_Method_ID" Type="char" MaxLength="1" />
+    <Property Name="Sub_Billing_Amount" Type="decimal" Scale="2" />
+    <Property Name="Sub_Ticket_Nbr" Type="varchar" MaxLength="25" />
+    <Property Name="Sub_Override_Flag" Type="bit" />
+    <Property Name="Rejected_Flag" Type="bit" Nullable="false" />
+    <Property Name="Date_Rejected" Type="datetime" />
+    <Property Name="Cn_Survey_Completed_Flag" Type="bit" Nullable="false" />
+    <Property Name="PM_Phase_RecID" Type="int" />
+    <Property Name="WBS_Code" Type="varchar" MaxLength="50" />
+    <Property Name="Rec_Type" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="EmailContact_Flag" Type="bit" />
+    <Property Name="EmailResource_Flag" Type="bit" />
+    <Property Name="EmailCC_Flag" Type="bit" />
+    <Property Name="EmailCC" Type="varchar" MaxLength="1000" />
+    <Property Name="CustUpdate_Flag" Type="char" MaxLength="1" />
+    <Property Name="Country_RecID" Type="int" />
+    <Property Name="KB_Category_RecID" Type="int" />
+    <Property Name="KB_SubCategory_RecID" Type="int" />
+    <Property Name="KB_Link_RecID" Type="int" />
+    <Property Name="KB_Link_Type" Type="char" MaxLength="1" />
+    <Property Name="SR_SLA_RecID" Type="int" />
+    <Property Name="Order_Header_RecID" Type="int" />
+    <Property Name="Orig_Status" Type="int" />
+    <Property Name="Exp_Billable_Flag" Type="bit" Nullable="false" />
+    <Property Name="Consolidate_Flag" Type="bit" Nullable="false" />
+    <Property Name="Bill_Complete_Flag" Type="bit" Nullable="false" />
+    <Property Name="SR_SubType_RecID" Type="int" />
+    <Property Name="Date_Entered_UTC" Type="datetime" />
+    <Property Name="Date_Req_UTC" Type="datetime" />
+    <Property Name="Last_Update_UTC" Type="datetime" />
+    <Property Name="Date_Closed_UTC" Type="datetime" />
+    <Property Name="CWN_Last_Full_Sync_UTC" Type="datetime" />
+    <Property Name="Sub_Date_Accepted_UTC" Type="datetime" />
+    <Property Name="Date_Rejected_UTC" Type="datetime" />
+    <Property Name="SR_SubTypeItem_RecID" Type="int" />
+  </EntityType>
+  <EntityType Name="SR_Status">
+    <Key>
+      <PropertyRef Name="SR_Status_RecID" />
+    </Key>
+    <Property Name="Owner_ID" Type="int" />
+    <Property Name="SR_Status_RecID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Owner_Level_RecID" Type="int" />
+    <Property Name="Billing_Unit_RecID" Type="int" />
+    <Property Name="Description" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Default_Flag" Type="bit" Nullable="false" />
+    <Property Name="Sort_Order" Type="smallint" />
+    <Property Name="Board_Flag" Type="bit" Nullable="false" />
+    <Property Name="Closed_Flag" Type="bit" Nullable="false" />
+    <Property Name="No_Time_Flag" Type="bit" Nullable="false" />
+    <Property Name="Last_Update" Type="datetime" />
+    <Property Name="Updated_By" Type="varchar" MaxLength="15" />
+    <Property Name="SR_Notify_Type_ID" Type="char" MaxLength="1" />
+    <Property Name="Member_RecID" Type="int" />
+    <Property Name="Workflow_Step" Type="int" />
+    <Property Name="Resolved_Flag" Type="bit" />
+    <Property Name="NoEscalation_Flag" Type="bit" />
+    <Property Name="Escalation_Level" Type="smallint" />
+    <Property Name="SR_Board_RecID" Type="int" />
+    <Property Name="Customer_Portal_Flag" Type="bit" />
+    <Property Name="SV_SetupHdr_RecID" Type="int" />
+    <Property Name="nsn_status_id" Type="char" MaxLength="1" />
+    <Property Name="Inactive_Flag" Type="bit" />
+    <Property Name="Long_Description" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'cwwebapp_sd.dbo.somethingdigital_vTickets' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="somethingdigital_vTickets">
+    <Key>
+      <PropertyRef Name="ticketid" />
+      <PropertyRef Name="status" />
+    </Key>
+    <Property Name="ticketid" Type="int" Nullable="false" />
+    <Property Name="Employee" Type="varchar" MaxLength="61" />
+    <Property Name="budget" Type="decimal" Scale="2" />
+    <Property Name="actualHours" Type="decimal" Precision="38" Scale="2" />
+    <Property Name="client" Type="varchar" MaxLength="50" />
+    <Property Name="name" Type="varchar" MaxLength="100" />
+    <Property Name="status" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="schedule_type_id" Type="char" MaxLength="1" />
+    <Property Name="scheduleDate" Type="datetime" />
+    <Property Name="Sort_Order" Type="smallint" />
+    <Property Name="employeeId" Type="int" />
+    <Property Name="clientId" Type="int" />
+    <Property Name="statusId" Type="int" />
+    <Property Name="boardId" Type="int" />
+  </EntityType>
+</Schema>

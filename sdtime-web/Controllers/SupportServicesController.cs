@@ -22,13 +22,10 @@ namespace sdtime.Controllers
             return Json(client.SetTicket(ticket.GetContractObject()));
         }
 
-        public ActionResult ServiceBoard(int? [] members, int? [] clients)
+        public ActionResult ServiceBoard(List<int?> members, List<int?> clients)
         {
             SupportResponse response = new SupportResponse();
-            response.buckets = new List<Bucket>();
-            response.members = new List<Member>();
-            response.clients= new List<Client>();
-                 
+            
 
             /*
             int diff = DateTime.Now.DayOfWeek - DayOfWeek.Monday;
@@ -46,10 +43,12 @@ namespace sdtime.Controllers
             tickets = tickets.OrderBy(t => t.Sort_Order);
             */
 
+            var board = Util.CWServiceBoards.InteractiveManagedServices;
+
             CWTicketService.TicketServiceClient client = new CWTicketService.TicketServiceClient();
-            List<CWTicketService.Ticket> svcTickets = client.GetTicketsForTheWeek(members, clients, 11).ToList();
-            List<CWTicketService.Status> svcStatuss = client.GetStatus(11).ToList();
-                
+            List<CWTicketService.Ticket> svcTickets = client.GetTicketsForTheWeek(members, clients, board);
+            List<CWTicketService.Status> svcStatuss = client.GetStatus(board);
+
             foreach (CWTicketService.Status svcStatus in svcStatuss)
             {
                 response.buckets.Add(new Bucket { name = svcStatus.Title, status = svcStatus.Title, statusId = svcStatus.StatusID, sortOrder = svcStatus.SortOrder });
@@ -59,8 +58,6 @@ namespace sdtime.Controllers
                 Bucket tmp = response.buckets.FirstOrDefault(b => b.statusId == svcTicket.StatusID);
                 if (tmp != null)
                 {
-                    if (tmp.tickets == null)
-                        tmp.tickets = new List<Ticket>();
                     if (!response.members.Any(m => m.memberId == svcTicket.AssignedMemberId))
                         response.members.Add(new Member { fullName = svcTicket.AssignedMember, memberId = svcTicket.AssignedMemberId });
                     if (!response.clients.Any(m => m.clientId == svcTicket.ClientID))

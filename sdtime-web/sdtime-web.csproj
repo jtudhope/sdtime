@@ -134,6 +134,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Util\CWServiceBoards.cs" />
     <Compile Include="Util\Security\ClaimCollectionExtensions.cs" />
     <Compile Include="Util\Security\ClaimsContants.cs" />
     <Compile Include="Util\Security\ClaimsInfo.cs" />
